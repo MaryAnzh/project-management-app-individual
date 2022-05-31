@@ -1,18 +1,18 @@
 # project-management-app-individual
 
-Steps:
+**Steps:**
 
-1.Backend
-1.1 Pegistration to Heroku and
+- 1.Backend
+-- 1.1 Pegistration to Heroku and
     npm install -g heroku
 	heroku --version
 
-1.2 Clone Backend repo:
+-- 1.2 Clone Backend repo:
     git clone https://github.com/vitaly-sazonov/kanban-rest.git
     cd kanban-rest
 	git switch source
 
-1.3 Deploy on Heroku:
+-- 1.3 Deploy on Heroku:
     heroku create project-management-app-individ --region eu
     heroku addons:create heroku-postgresql:hobby-dev
     heroku config:set NPM_CONFIG_PRODUCTION=false
@@ -29,4 +29,4 @@ Steps:
 	// делаем мерж, на Хероку автоматический билд при мерже в main
 	git push heroku source:main
 
-2. Установка и настройка Angular
+- 2. Установка и настройка Angular

@@ -79,3 +79,11 @@ npm i angular-cli-ghpages --save-dev
 // для запуска
 
 ng deploy --base-href="https://maryanzh.github.io/project-management-app-individual/"
+Добавляем скрипт 
+
+"deploy": "ng deploy --base-href='https://maryanzh.github.io/project-management-app-individual/'",
+
+2.3 Добавление ESLint
+//вводим ng lint , и терминал сам предложит те команды, которые нужно установить
+ ng lint
+

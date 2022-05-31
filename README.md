@@ -60,7 +60,19 @@ git push heroku source
 git push heroku source:main
 
 2. Установка и настройка Angular
-
+2.1
 ng new project-management-app
 cd project-management-app
 ng serv -o
+
+2.2 Add angular-cli-ghpages
+
+npm i angular-cli-ghpages --save-dev
+
+Изменить angular.json
+          "options": {
+            **"outputPath": "dist",**
+
+// для запуска
+ng build --base-href "https://maryanzh.github.io/project-management-app-individual/"
+npx angular-cli-ghpages

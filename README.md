@@ -1,6 +1,9 @@
 
 # ProjectManagementApp
 
+deploy:
+https://maryanzh.github.io/project-management-app-individual/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
@@ -74,5 +77,5 @@ npm i angular-cli-ghpages --save-dev
             **"outputPath": "dist",**
 
 // для запуска
-ng build --base-href "https://maryanzh.github.io/project-management-app-individual/"
-npx angular-cli-ghpages
+
+ng deploy --base-href="https://maryanzh.github.io/project-management-app-individual/"

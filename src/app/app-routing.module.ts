@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
-import { InfoComponent } from './info/info/info.component';
+import { WelcomComponent } from './core/pages/welcom/welcom.component';
 
 const routes: Routes = [
   {
@@ -11,13 +11,12 @@ const routes: Routes = [
   },
   {
     path: 'welcom',
-    component: InfoComponent
+    component: WelcomComponent
   },
   {
     path: '**',
     component: PageNotFoundComponent
   },
-
 ];
 
 @NgModule({

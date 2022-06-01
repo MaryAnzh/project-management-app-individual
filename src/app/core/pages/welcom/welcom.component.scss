@@ -1,0 +1,13 @@
+:host {
+  button {
+    cursor: pointer;
+
+    &:hover {
+      background: blue;
+    }
+
+    &:active {
+      background: wheat;
+    }
+  }
+}

@@ -1,4 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { IUseRegistrationData } from '../../model/user.model';
+import { RequestService } from '../../service/request/request.service';
 
 @Component({
   selector: 'app-welcom',
@@ -8,5 +11,10 @@ import { Component } from '@angular/core';
 
 export class WelcomComponent {
 
+  constructor(
+    private requestService: RequestService
+  ) {
+
+}
 
 }

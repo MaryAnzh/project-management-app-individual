@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { InterceptorInterceptor } from './core/interceptor/interceptor.interceptor';
+import { HTTPClientInterceptor } from './core/interceptor/http-client.interceptor';
 
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegistrationComponent } from './auth/pages/registration/registration.component';
@@ -25,7 +25,7 @@ import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.com
   ],
   providers: [
     {
-      provide: HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true,
+      provide: HTTP_INTERCEPTORS, useClass: HTTPClientInterceptor, multi: true,
     },
   ],
 

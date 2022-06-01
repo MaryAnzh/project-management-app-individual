@@ -11,7 +11,8 @@ import { IUserStorage } from '../model/user.model';
 
 @Injectable()
 
-export class InterceptorInterceptor implements HttpInterceptor {
+export class HTTPClientInterceptor implements HttpInterceptor {
+
   private _baseURL = 'https://project-management-app-individ.herokuapp.com';
 
   private _token = '';

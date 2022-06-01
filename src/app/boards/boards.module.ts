@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { BoardsRoutingModule } from './boards-routing.module';
 import { BoardsComponent } from './boards.component';
+import { BoardComponent } from './pages/board/board.component';
 
 
 @NgModule({
   declarations: [
-    BoardsComponent
+    BoardsComponent,
+    BoardComponent
   ],
   imports: [
     CommonModule,

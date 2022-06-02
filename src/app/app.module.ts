@@ -9,7 +9,8 @@ import { HTTPClientInterceptor } from './core/interceptor/http-client.intercepto
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegistrationComponent } from './auth/pages/registration/registration.component';

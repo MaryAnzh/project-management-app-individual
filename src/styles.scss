@@ -11,14 +11,9 @@ body {
   color: $mainColorDark;
 }
 
-header,
-main,
-footer {
+main {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-main {
   margin: 20px 0;
 }

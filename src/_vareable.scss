@@ -1,6 +1,12 @@
-$mainColorDark: #2A4480;
-$mainColorLight: #DEF5F5;
-$mainColor: #446fd5;
-$additionalColor: #2eb1b1;
-$additionalColorLight: #8ddada;
-$gradientDark: #6C8CD5;
+$mainColorDark: #469400;
+$mainColorLight: #d4ecbf;
+$mainColor: #67AB2B;
+$additionalColor: #218457;
+$additionalColorLight: #61D8A2;
+$additionalDark: #00733E;
+$gradientDark: #1b9b61;
+$gradientLight: #dee7d5;
+
+%mainGradient {
+  background: linear-gradient(to right, $gradientLight, $gradientDark);
+}

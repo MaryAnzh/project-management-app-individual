@@ -4,12 +4,12 @@ import { IUseRegistrationData } from '../../model/user.model';
 import { RequestService } from '../../service/request/request.service';
 
 @Component({
-  selector: 'app-welcom',
-  templateUrl: './welcom.component.html',
-  styleUrls: ['./welcom.component.scss']
+  selector: 'app-welcome',
+  templateUrl: './welcome.component.html',
+  styleUrls: ['./welcome.component.scss']
 })
 
-export class WelcomComponent {
+export class welcomeComponent {
 
   constructor(
     private requestService: RequestService

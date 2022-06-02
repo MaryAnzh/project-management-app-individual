@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
-import { WelcomComponent } from './core/pages/welcom/welcom.component';
+import { welcomeComponent } from './core/pages/welcome/welcome.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegistrationComponent } from './auth/pages/registration/registration.component';
 import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.component';
@@ -9,12 +9,12 @@ import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.com
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'welcom',
+    redirectTo: 'welcome',
     pathMatch: 'full',
   },
   {
-    path: 'welcom',
-    component: WelcomComponent
+    path: 'welcome',
+    component: welcomeComponent
   },
   {
     path: 'login',
@@ -25,7 +25,7 @@ const routes: Routes = [
     component: RegistrationComponent
   },
   {
-    path: 'edit-profile',
+    path: '',
     component: EditProfileComponent
   },
   {

@@ -1,21 +1,52 @@
 <header class="header">
-  <div class="header__wrap">
-    <section class="header__wrap__section-logo">
-      <div class="header__wrap__section-logo__logo">
-        <img
-          src="assets/header/logo.png"
-          alt="logo"
-          [routerLink]="['/welcome']">
-        <p class="header__wrap__section-logo__logo__text">
-          <!-- {{'HEADER.YOUR_WAY' | translate}} <br>
+  <section class="header__section-logo">
+    <svg
+      viewBox="0 0 104 104"
+      [routerLink]="['/welcome']">
+      <path
+        d="M18.33,49.36v25.05H3.68V3.31h27.73c5.34,0,10.03,0.98,14.09,2.93s7.17,4.73,9.35,8.33
+        c2.18,3.6,3.27,7.69,3.27,12.28c0,6.97-2.38,12.46-7.15,16.48c-4.77,4.02-11.37,6.03-19.8,6.03H18.33z
+        M18.33,37.49h13.09
+        c3.87,0,6.83-0.91,8.86-2.73c2.03-1.82,3.05-4.43,3.05-7.81c0-3.48-1.03-6.3-3.08-8.45s-4.88-3.25-8.5-3.32H18.33V37.49z"
+        />
+        <path
+          d="M96.52,102.67c0.14-2.38,1.74-4.67,4.82-4.67c0.08,0,0.15,0.01,0.22,0.01V71.42
+          c-0.06-5.65-1.37-9.93-3.93-12.83c-2.56-2.9-6.47-4.35-11.71-4.35c-6.27,0-11.13,2.43-14.59,7.29c-2.34-4.86-6.69-7.29-13.05-7.29
+          c-5.8,0-10.37,1.95-13.71,5.84l-0.31-4.97H34.19v47.55h10.68V68.21c1.79-3.49,4.82-5.23,9.1-5.23c5.57,0,8.42,2.8,8.57,8.39v31.29
+          h10.68l-0.04-32.61c0.62-2.11,1.69-3.82,3.23-5.12c1.54-1.3,3.52-1.96,5.95-1.96c3.05,0,5.23,0.7,6.55,2.11s1.98,3.62,1.98,6.64
+          v30.94H96.52z" />
+          <path
+            d="M92,104H12c-6.62,0-12-5.38-12-12V12C0,5.38,5.38,0,12,0h80c6.62,0,12,5.38,12,12v80
+            C104,98.62,98.62,104,92,104z
+            M12,4c-4.41,0-8,3.59-8,8v80c0,4.41,3.59,8,8,8h80c4.41,0,8-3.59,8-8V12c0-4.41-3.59-8-8-8H12z"
+            />
+          </svg>
+          <p class="header__wrap__section-logo__logo__text">
+            <!-- {{'HEADER.YOUR_WAY' | translate}} <br>
           {{'HEADER.TO_SUCCESS' | translate}} -->
-          Your Way <br>to Success
-        </p>
-      </div>
-    </section>
+            Your Way <br>to Success
+          </p>
+        </section>
 
-    <section>
-    </section>
+        <section class="header__section-auth-and-lang">
+          <div class="header__section-auth-and-lang__auth">
+            <ng-container>
+              <button
+              [routerLink]="['/login']">
+                Login
+              </button>
+              <button
+              [routerLink]="['/registration']">
+                Registration
+              </button>
+            </ng-container>
 
-  </div>
-</header>
+          </div>
+          <div class="header__section-auth-and-lang__lang">
+            <select>
+              <option>En</option>
+              <option>RuS</option>
+            </select>
+          </div>
+        </section>
+      </header>

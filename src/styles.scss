@@ -11,14 +11,15 @@ body {
   color: $mainColorDark;
 }
 
-header,
-main,
-footer {
+main {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 20px 0;
 }
 
-main {
-  margin: 20px 0;
+button {
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
 }

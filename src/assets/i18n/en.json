@@ -6,7 +6,7 @@
     "LOGOUT": "Logout",
     "REGISTRATION": "Registration",
     "NAV":{
-      "welcomeE": "welcomee",
+      "welcome": "welcome",
       "BOARDS": "My Boards",
       "CREATE_BOARD":"Create new board",
       "EDIT_PROFILE": "Edit profile"

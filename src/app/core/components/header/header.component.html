@@ -22,9 +22,8 @@
             />
           </svg>
           <p class="header__wrap__section-logo__logo__text">
-            <!-- {{'HEADER.YOUR_WAY' | translate}} <br>
-          {{'HEADER.TO_SUCCESS' | translate}} -->
-            Your Way <br>to Success
+            {{'HEADER.YOUR_WAY' | translate}} <br>
+            {{'HEADER.TO_SUCCESS' | translate}}
           </p>
         </section>
 
@@ -32,20 +31,27 @@
           <div class="header__section-auth-and-lang__auth">
             <ng-container>
               <button
-              [routerLink]="['/login']">
-                Login
+                [routerLink]="['/login']">
+                {{"HEADER.LOGIN" | translate}}
               </button>
               <button
-              [routerLink]="['/registration']">
-                Registration
+                [routerLink]="['/registration']">
+                {{"HEADER.REGISTRATION" | translate}}
               </button>
             </ng-container>
 
           </div>
           <div class="header__section-auth-and-lang__lang">
-            <select>
-              <option>En</option>
-              <option>RuS</option>
+            <select
+            #selectLang
+            (change)="translateLanguageTo(selectLang.value)"
+            >
+              <option
+              value="en"
+              >En</option>
+              <option
+              value="ru"
+              >RuS</option>
             </select>
           </div>
         </section>

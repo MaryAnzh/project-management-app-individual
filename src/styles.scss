@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(reset.scss);
+@import 'vareable';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: 300;
+  color: $mainColorDark;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  margin: 20px 0;
+}

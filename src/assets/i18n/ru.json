@@ -6,7 +6,7 @@
     "LOGOUT": "Выйти",
     "REGISTRATION": "Регистрация",
     "NAV":{
-      "WELCOME": "Приветствие",
+      "welcomeE": "Приветствие",
       "BOARDS": "Мои доски",
       "CREATE_BOARD":"Создать доску",
       "EDIT_PROFILE": "Редактировать профиль"

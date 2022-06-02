@@ -12,6 +12,7 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     &__section-logo {
       display: flex;
@@ -20,17 +21,56 @@
       svg {
         width: 70px;
         height: 70px;
-        fill: $mainColorDark;
+        fill: $mainColor;
         cursor: pointer;
         transition: .3s;
 
         &:hover {
-          fill: $mainColor;
+          fill: #A101A6;
         }
       }
 
       p {
         padding-left: 10px;
+      }
+    }
+
+    &__section-auth-and-lang {
+      width: 360px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__auth {
+        width: 210px;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          height: 30px;
+          padding: 0 10px;
+          color: white;
+          background: $mainColorDark;
+          border: 1px solid white;
+          transition: .3s;
+
+          &:hover {
+            background: $additionalDark;
+            border: 1px solid $additionalColorLight;
+          }
+        }
+      }
+
+      &__lang {
+        select {
+          height: 26px;
+          background: $mainColorDark;
+          border: 1px solid white;
+          border-radius: 5px;
+          color: white;
+          font-size: 18px;
+        }
+
       }
     }
   }

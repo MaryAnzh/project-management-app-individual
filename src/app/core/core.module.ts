@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { welcomeComponent } from './pages/welcome/welcome.component';
@@ -19,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    TranslateModule,
   ],
   exports: [
     HeaderComponent,

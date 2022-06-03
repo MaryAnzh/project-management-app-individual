@@ -23,8 +23,11 @@ export class HTTPClientInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log(`${this._baseURL}${request.url}`);
 
+    if (request.url.indexOf('assets/i18n') > -1) {
+      this._token = '';
+      this._baseURL = '';
+    }
     const clientRequest = request.clone({
       setHeaders: { 'Authorization': this._token },
       url: `${this._baseURL}${request.url}`,

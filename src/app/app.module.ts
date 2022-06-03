@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -69,6 +70,8 @@ export function moduleHttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

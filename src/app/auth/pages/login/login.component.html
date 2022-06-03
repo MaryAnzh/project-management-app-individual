@@ -1,10 +1,49 @@
-<form class="auth-form login-form">
+<form class="auth-form login-form"
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()">
   <h2>{{'AUTH.LOGIN_TITLE' | translate}}</h2>
 
   <div class="auth-form__field">
-
+    <label for="email">{{'AUTH.INPUTS.EMAIL' | translate}}</label>
+    <input
+      type="text"
+      placeholder="{{'AUTH.INPUTS.EMAIL_PLACEHOLDER' | translate}}"
+      name="email"
+      formControlName="email">
   </div>
   <div class="auth-form__error">
+    <ng-container
+      *ngIf="email.invalid
+      && (email.touched
+      || email.dirty)">
+      <p
+        *ngIf="email.errors?.['required']">
+        {{'AUTH.VALIDATE.EMAIL_REQUIRED' | translate}}
+      </p>
+      <p
+        *ngIf="email.errors?.['email']">
+        {{'AUTH.VALIDATE.EMAIL_VALID_EMAIL' | translate}}
+      </p>
+    </ng-container>
+  </div>
 
+  <div class="auth-form__field">
+    <label for="password">{{'AUTH.INPUTS.PASSWORD' | translate}}</label>
+    <input
+      type="text"
+      placeholder="{{'AUTH.INPUTS.PASSWORD_PLACEHOLDER' | translate}}"
+      name="password"
+      formControlName="password">
+  </div>
+  <div class="auth-form__error">
+    <ng-container
+      *ngIf="password.invalid
+      && (password.touched
+      || password.dirty)">
+      <p
+        *ngIf="password.errors?.['required']">
+        {{'AUTH.VALIDATE.PASSWORD_REQUIRED' | translate}}
+      </p>
+    </ng-container>
   </div>
 </form>

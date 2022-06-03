@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -20,9 +21,6 @@ import { RegistrationComponent } from './auth/pages/registration/registration.co
 import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.component';
 import { reducers, metaReducers } from './redux/reducers';
 
-export function httpTranslateLoaderFactory(httpBackend: HttpBackend): TranslateHttpLoader {
-  return new TranslateHttpLoader(new HttpClient(httpBackend));
-}
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -31,20 +29,6 @@ export function createTranslateLoader(http: HttpClient) {
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
-
-export function moduleHttpLoaderFactory(http: HttpClient) {
-  const baseTranslateUrl = "./assets/i18n/";
-
-  const options: IModuleTranslationOptions = {
-    modules: [
-      // final url: ./assets/i18n/en.json
-      { baseTranslateUrl },
-    ]
-  };
-
-  return new ModuleTranslateLoader(http, options);
-}
-
 
 @NgModule({
   declarations: [
@@ -71,7 +55,8 @@ export function moduleHttpLoaderFactory(http: HttpClient) {
       }
     }),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

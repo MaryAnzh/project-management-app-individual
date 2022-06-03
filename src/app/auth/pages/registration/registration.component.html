@@ -1,10 +1,126 @@
-<form class="auth-form">
+<form class="auth-form login-form"
+  [formGroup]="registrationForm"
+  (ngSubmit)="onSubmit()">
   <h2>{{'AUTH.REGISTRATION_TITLE' | translate}}</h2>
 
-    <div class="auth-form__field">
-
+  <div class="auth-form__field">
+    <label for="user-name">{{'AUTH.INPUTS.USER_NAME' | translate}}</label>
+    <input
+      type="text"
+      name="user-name"
+      formControlName="userName"
+      maxlength="31">
   </div>
   <div class="auth-form__error">
+    <ng-container
+      *ngIf="userName.invalid
+      && (userName.touched
+      || userName.dirty)">
+      <p
+        *ngIf="userName.errors?.['required']">
+        {{'AUTH.VALIDATE.USER_NAME_REQUIRED' | translate}}
+      </p>
+      <p
+        *ngIf="userName.errors?.['minlength']">
+        {{'AUTH.VALIDATE.USER_NAME_MINLENGTH' | translate}}
+      </p>
+      <p
+        *ngIf="userName.errors?.['maxlength']">
+        {{'AUTH.VALIDATE.USER_NAME_MAXLENGTH' | translate}}
+      </p>
+    </ng-container>
+  </div>
 
+  <div class="auth-form__field">
+    <label for="email">{{'AUTH.INPUTS.EMAIL' | translate}}</label>
+    <input
+      type="text"
+      name="email"
+      formControlName="email"
+      maxlength="31">
+  </div>
+  <div class="auth-form__error">
+    <ng-container
+      *ngIf="email.invalid
+      && (email.touched
+      || email.dirty)">
+      <p
+        *ngIf="email.errors?.['required']">
+        {{'AUTH.VALIDATE.EMAIL_REQUIRED' | translate}}
+      </p>
+      <p
+        *ngIf="email.errors?.['email']">
+        {{'AUTH.VALIDATE.EMAIL_VALID_EMAIL' | translate}}
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="auth-form__field">
+    <label for="password">{{'AUTH.INPUTS.PASSWORD' | translate}}</label>
+    <input
+      type="password"
+      name="password"
+      formControlName="password"
+      maxlength="31">
+  </div>
+
+  <div
+    class="password-error">
+    <ng-container
+      *ngIf="password.invalid
+      && (password.touched
+      || password.dirty)"
+      [@inOutAnimation]>
+      <p
+        *ngIf="password.errors?.['required']">
+        {{'AUTH.VALIDATE.PASSWORD_REQUIRED' | translate}}
+      </p>
+    </ng-container>
+  </div>
+  <div>
+    <ng-container>
+      <ul
+        @openClose
+        *ngIf="(password.errors?.['minlength']
+        || password.errors?.['lowerCaseTest']
+        || password.errors?.['upperCaseTest']
+        || password.errors?.['numberTest']
+        || password.errors?.['specSymbolTest'])
+        && !password.errors?.['required']">
+        {{'AUTH.VALIDATE.CONTAIN' | translate}}
+        <li
+          *ngIf="password.errors?.['minlength']">
+          {{'AUTH.VALIDATE.CONTAIN' | translate}} 8 {{'AUTH.VALIDATE.SYMBOLS' |
+          translate}}
+        </li>
+        <li
+          *ngIf="password.errors?.['lowerCaseTest']">
+          {{'AUTH.VALIDATE.LOWER_CASE_VALIDATE' | translate}}
+        </li>
+        <li
+          *ngIf="password.errors?.['upperCaseTest']">
+          {{'AUTH.VALIDATE.UPPER_CASE_VALIDATE' | translate}}
+        </li>
+        <li
+          *ngIf="password.errors?.['numberTest']">
+          {{'AUTH.VALIDATE.DIGT_VALIDATE' | translate}}
+        </li>
+        <li
+          *ngIf="password.errors?.['specSymbolTest']">
+          {{'AUTH.VALIDATE.SYMBOL_VALIDATE' | translate}}
+        </li>
+      </ul>
+    </ng-container>
+  </div>
+
+
+  <div class="auth-form__buttons-wrap">
+    <a
+      routerLink="/login">
+      {{'AUTH.BUTTONS.LOGIN' | translate}}</a>
+    <button
+      [ngClass]="{'visible': !registrationForm.invalid,
+      'auth-form__buttons-wrap__button': true}"
+      type="submit">{{'AUTH.BUTTONS.REGISTRATION' | translate}}</button>
   </div>
 </form>

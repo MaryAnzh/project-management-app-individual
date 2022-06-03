@@ -5,7 +5,6 @@ import { welcomeComponent } from './core/pages/welcome/welcome.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegistrationComponent } from './auth/pages/registration/registration.component';
 import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.component';
-import { I18nInterceptor } from './core/interceptor/i18n.interceptor';
 
 const routes: Routes = [
   {

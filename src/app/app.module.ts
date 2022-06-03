@@ -18,7 +18,6 @@ import { LoginComponent } from './auth/pages/login/login.component';
 import { RegistrationComponent } from './auth/pages/registration/registration.component';
 import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.component';
 import { reducers, metaReducers } from './redux/reducers';
-import { I18nInterceptor } from './core/interceptor/i18n.interceptor';
 
 export function httpTranslateLoaderFactory(httpBackend: HttpBackend): TranslateHttpLoader {
   return new TranslateHttpLoader(new HttpClient(httpBackend));
@@ -72,11 +71,6 @@ export function moduleHttpLoaderFactory(http: HttpClient) {
     }),
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: I18nInterceptor,
-      multi: true,
-    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HTTPClientInterceptor,

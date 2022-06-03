@@ -79,7 +79,7 @@
   </div>
   <div>
     <ng-container>
-      <ul
+      <ul class="test"
         @openClose
         *ngIf="(password.errors?.['minlength']
         || password.errors?.['lowerCaseTest']
@@ -113,6 +113,29 @@
     </ng-container>
   </div>
 
+    <div class="auth-form__field">
+    <label for="email">{{'AUTH.INPUTS.EMAIL' | translate}}</label>
+    <input
+      type="text"
+      name="email"
+      formControlName="email"
+      maxlength="31">
+  </div>
+  <div class="auth-form__error">
+    <ng-container
+      *ngIf="email.invalid
+      && (email.touched
+      || email.dirty)">
+      <p
+        *ngIf="email.errors?.['required']">
+        {{'AUTH.VALIDATE.EMAIL_REQUIRED' | translate}}
+      </p>
+      <p
+        *ngIf="email.errors?.['email']">
+        {{'AUTH.VALIDATE.EMAIL_VALID_EMAIL' | translate}}
+      </p>
+    </ng-container>
+  </div>
 
   <div class="auth-form__buttons-wrap">
     <a
@@ -123,4 +146,6 @@
       'auth-form__buttons-wrap__button': true}"
       type="submit">{{'AUTH.BUTTONS.REGISTRATION' | translate}}</button>
   </div>
+
+
 </form>

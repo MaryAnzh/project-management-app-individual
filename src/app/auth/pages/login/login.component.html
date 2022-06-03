@@ -7,9 +7,9 @@
     <label for="email">{{'AUTH.INPUTS.EMAIL' | translate}}</label>
     <input
       type="text"
-      placeholder="{{'AUTH.INPUTS.EMAIL_PLACEHOLDER' | translate}}"
       name="email"
-      formControlName="email">
+      formControlName="email"
+      maxlength="31">
   </div>
   <div class="auth-form__error">
     <ng-container
@@ -31,9 +31,9 @@
     <label for="password">{{'AUTH.INPUTS.PASSWORD' | translate}}</label>
     <input
       type="text"
-      placeholder="{{'AUTH.INPUTS.PASSWORD_PLACEHOLDER' | translate}}"
       name="password"
-      formControlName="password">
+      formControlName="password"
+      maxlength="31">
   </div>
   <div class="auth-form__error">
     <ng-container
@@ -45,5 +45,14 @@
         {{'AUTH.VALIDATE.PASSWORD_REQUIRED' | translate}}
       </p>
     </ng-container>
+  </div>
+
+  <div class="auth-form__buttons-wrap">
+    <a
+      routerLink="/registration">
+      {{'AUTH.BUTTONS.REGISTRATION' | translate}}</a>
+    <button
+      [ngClass]="{'visible': !loginForm.invalid, 'auth-form__buttons-wrap__button': true}"
+      type="submit">{{'AUTH.BUTTONS.LOGIN' | translate}}</button>
   </div>
 </form>

@@ -23,3 +23,8 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.visible {
+  opacity: 1;
+  pointer-events: all;
+}

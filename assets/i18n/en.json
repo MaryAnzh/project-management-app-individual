@@ -5,6 +5,7 @@
     "LOGIN": "Login",
     "LOGOUT": "Logout",
     "REGISTRATION": "Registration",
+    "HELLO": "Hello",
     "NAV":{
       "welcome": "welcome",
       "BOARDS": "My Boards",

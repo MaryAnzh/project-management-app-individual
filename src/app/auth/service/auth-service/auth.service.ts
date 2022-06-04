@@ -6,6 +6,7 @@ import { StorageService } from 'src/app/core/service/storage/storage.service';
 import { RequestService } from 'src/app/core/service/request/request.service';
 
 import {
+  IUser,
   IUserStorage,
   IUserRegistrationData,
   IUserRegistrationResponse,
@@ -41,7 +42,7 @@ export class AuthService {
     let result = this.requestService.createUser(user);
 
     let subscription: Subscription = result.subscribe(v => { console.log(`kyky: ${v.name}`); subscription.unsubscribe(); });
-
+    this.router.navigateByUrl('/login');
     return result;
   }
 
@@ -50,9 +51,35 @@ export class AuthService {
 
     let subscription: Subscription = result.subscribe({
       next: (value) => {
+        const storageData: IUserStorage = {
+          name: '',
+          login: user.login,
+          id: '',
+          token: value.token,
+          date: new Date().toString(),
+        }
+        this.storage.setData('user', storageData);
+        this.router.navigateByUrl('/main');
 
+        let newSubscription: Subscription = this.requestService.getUsers().pipe(
+          map((person) => {
+            return person.find((el) => el.login === user.login)
+          })
+        ).subscribe({
+          next: (person) => {
+            if (person) {
+              storageData.name = person.name;
+              storageData.id = person.id;
+              this.storage.setData('user', storageData);
+              this._user$$.next(storageData);
+            }
+          },
+          error: (error) => console.error(error),
+          complete: () => newSubscription.unsubscribe(),
+        })
       },
       error: (error) => {
+        console.error(error);
 
       },
       complete: () => subscription.unsubscribe(),

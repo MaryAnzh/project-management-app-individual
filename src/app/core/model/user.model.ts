@@ -26,8 +26,9 @@ export interface IUserLoginResponse {
 };
 
 export interface IUserStorage {
-  name: '',
-  login: '',
-  id: '',
-  token: '',
+  name: string,
+  login: string,
+  id: string,
+  token: string,
+  date: string,
 }

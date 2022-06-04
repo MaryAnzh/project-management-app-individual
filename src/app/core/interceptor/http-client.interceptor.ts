@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import {
   HttpRequest,
   HttpHandler,
@@ -18,7 +19,7 @@ export class HTTPClientInterceptor implements HttpInterceptor {
   private _token = '';
 
   constructor(private storageService: StorageService) {
-    const user: IUserStorage | null = this.storageService.getData('user')
+    const user: IUserStorage | null = this.storageService.getData('user');
     this._token = user ? user.token : '';
   }
 
@@ -27,12 +28,13 @@ export class HTTPClientInterceptor implements HttpInterceptor {
     let url = '';
 
     if (request.url.indexOf('assets/i18n') === -1) {
-      token = this._token;
+      const user: IUserStorage | null = this.storageService.getData('user');
+      token = user ? user.token : '';
       url = this._baseURL;
     }
 
     const clientRequest = request.clone({
-      setHeaders: { 'Authorization': token },
+      setHeaders: { 'Authorization': `Bearer ${ token }` },
       url: `${url}${request.url}`,
     });
     return next.handle(clientRequest);

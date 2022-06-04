@@ -5,8 +5,9 @@
     "LOGIN": "Login",
     "LOGOUT": "Logout",
     "REGISTRATION": "Registration",
+    "HELLO": "Hello",
     "NAV":{
-      "welcomeE": "welcomee",
+      "welcome": "welcome",
       "BOARDS": "My Boards",
       "CREATE_BOARD":"Create new board",
       "EDIT_PROFILE": "Edit profile"
@@ -50,7 +51,8 @@
       "EMAIL_VALID_EMAIL":"The login email is invalid",
       "PASSWORD_REQUIRED":"Please enter a password",
       "USER_NAME_REQUIRED":"Please enter a user-name",
-      "USER_NAME_MINLENGTH":"length must be at least",
+      "USER_NAME_MINLENGTH":"length must be at least 3 characters",
+      "USER_NAME_MAXLENGTH": "length must be shortest 30 characters",
       "AT_LEAST": "at least",
       "SYMBOLS": "symbols",
       "CONTAIN": "The password must contain:",

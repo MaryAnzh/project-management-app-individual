@@ -1,13 +1,7 @@
-@angular/animations
-MIT
-
 @angular/common
 MIT
 
 @angular/core
-MIT
-
-@angular/forms
 MIT
 
 @angular/platform-browser
@@ -20,12 +14,6 @@ MIT
 MIT
 
 @ngrx/store-devtools
-MIT
-
-@ngx-translate/core
-MIT
-
-@ngx-translate/http-loader
 MIT
 
 rxjs

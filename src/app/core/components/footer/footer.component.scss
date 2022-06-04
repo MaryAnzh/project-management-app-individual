@@ -1,0 +1,65 @@
+@import '../../../../vareable';
+
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: $mainColorLight2;
+
+  .footer {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    @media (max-width: 720px) {
+      flex-wrap: wrap;
+    }
+
+    &__mary {
+      a {
+        height: 60px;
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 50px;
+          fill: $mainColor;
+          transition: .3s;
+
+          &:hover {
+            fill: $mainColorDark;
+          }
+        }
+
+        p {
+          margin-left: 10px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &__rs-school-logo {
+      a {
+        svg {
+          width: 138.41px;
+          height: 50ox;
+          fill: $mainColor;
+
+          &:hover {
+            fill: $mainColorDark;
+          }
+        }
+      }
+
+      @media (max-width: 720px) {
+        transform: scale(0.6);
+      }
+    }
+  }
+}

@@ -87,4 +87,9 @@ export class AuthService {
 
     return result;
   }
+
+  logout(): void {
+    this.storage.setData('user', null);
+    this._user$$.next(null);
+  }
 }

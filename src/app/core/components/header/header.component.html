@@ -31,7 +31,8 @@
 
         <section class="header__section-auth-and-lang">
           <div class="header__section-auth-and-lang__auth">
-            <ng-container>
+            <ng-container
+              *ngIf="!(isAuth$ | async)">
               <button
                 [routerLink]="['/login']">
                 {{"HEADER.LOGIN" | translate}}
@@ -39,6 +40,14 @@
               <button
                 [routerLink]="['/registration']">
                 {{"HEADER.REGISTRATION" | translate}}
+              </button>
+            </ng-container>
+            <ng-container
+              *ngIf="isAuth$ | async">
+              <p>{{'HEADER.HELLO' | translate}}, {{userName}}</p>
+              <button
+              (click)="logout()">
+                {{'HEADER.LOGOUT' | translate}}
               </button>
             </ng-container>
 

@@ -32,8 +32,6 @@ export class HTTPClientInterceptor implements HttpInterceptor {
       token = user ? user.token : '';
       url = this._baseURL;
     }
-    console.log('Запрос отправлен');
-    console.log(request);
 
     const clientRequest = request.clone({
       setHeaders: { 'Authorization': `Bearer ${ token }` },

@@ -13,8 +13,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpBackend, HttpClient, HttpClientModule, HttpParamsOptions } from '@angular/common/http';
-import { ModuleTranslateLoader, IModuleTranslationOptions } from '@larscom/ngx-translate-module-loader';
+import { HttpClient, HttpClientModule, HttpParamsOptions } from '@angular/common/http';
+import { enableProdMode } from '@angular/core';
 
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegistrationComponent } from './auth/pages/registration/registration.component';
@@ -56,7 +56,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     }),
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
   ],
   providers: [
     {
@@ -65,7 +66,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
       multi: true,
     },
   ],
-
   bootstrap: [AppComponent]
 })
 

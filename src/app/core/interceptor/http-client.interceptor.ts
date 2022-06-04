@@ -23,14 +23,17 @@ export class HTTPClientInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    let token = '';
+    let url = '';
 
-    if (request.url.indexOf('assets/i18n') > -1) {
-      this._token = '';
-      this._baseURL = '';
+    if (request.url.indexOf('assets/i18n') === -1) {
+      token = this._token;
+      url = this._baseURL;
     }
+
     const clientRequest = request.clone({
-      setHeaders: { 'Authorization': this._token },
-      url: `${this._baseURL}${request.url}`,
+      setHeaders: { 'Authorization': token },
+      url: `${url}${request.url}`,
     });
     return next.handle(clientRequest);
   }

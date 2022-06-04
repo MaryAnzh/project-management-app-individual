@@ -4,7 +4,7 @@ export interface IUseRegistrationData {
   password: string,
 }
 
-export interface IUseRegistrationRespons {
+export interface IUseRegistrationResponse {
   id: string,
   name: string,
   login: string

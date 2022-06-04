@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {
   IUseRegistrationData,
-  IUseRegistrationRespons
+  IUseRegistrationResponse
 } from '../../model/user.model';
 
 @Injectable({
@@ -17,8 +17,8 @@ export class RequestService {
 
   }
 
-  createUser(body: IUseRegistrationData): Observable<IUseRegistrationRespons> {
-    return this.http.post<IUseRegistrationRespons>(`/signup`, body);
+  createUser(body: IUseRegistrationData): Observable<IUseRegistrationResponse> {
+    return this.http.post<IUseRegistrationResponse>(`/signup`, body);
   }
 }
 

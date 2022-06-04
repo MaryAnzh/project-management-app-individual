@@ -2,8 +2,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {
-  IUseRegistrationData,
-  IUseRegistrationResponse
+  IUser,
+  IUserRegistrationData,
+  IUserRegistrationResponse,
+  IUserLoginData,
+  IUserLoginResponse
 } from '../../model/user.model';
 
 @Injectable({
@@ -17,8 +20,29 @@ export class RequestService {
 
   }
 
-  createUser(body: IUseRegistrationData): Observable<IUseRegistrationResponse> {
-    return this.http.post<IUseRegistrationResponse>(`/signup`, body);
+  createUser(body: IUserRegistrationData): Observable<IUserRegistrationResponse> {
+    return this.http.post<IUserRegistrationResponse>(`/signup`, body);
   }
+
+  loginUser(body: IUserLoginData): Observable<IUserLoginResponse> {
+    return this.http.post<IUserLoginResponse>(`/signin`, body);
+  }
+
+  getUsers(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(`/users`);
+  }
+
+  getUser(id: string): Observable<IUser> {
+    return this.http.get<IUser>(`/users/${id}`);
+  }
+
+  deletetUser(id: string): Observable<IUser> {
+    return this.http.delete<IUser>(`/users/${id}`);
+  }
+
+  updateUser(id: string, body: IUserLoginData): Observable<IUser> {
+    return this.http.put<IUser>(`/users/${id}`, body);
+  }
+
 }
 

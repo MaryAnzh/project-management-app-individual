@@ -4,7 +4,7 @@ import { CustomValidators } from 'src/app/shared/utils/CustomValidators';
 
 import { AuthService } from '../../service/auth-service/auth.service';
 
-import { IUseRegistrationData } from 'src/app/core/model/user.model';
+import { IUserRegistrationData } from 'src/app/core/model/user.model';
 import {
   trigger,
   state,
@@ -101,12 +101,11 @@ export class RegistrationComponent implements OnInit {
   onSubmit(): void {
     if (this.registrationForm.valid) {
 
-      const userData: IUseRegistrationData = {
+      const userData: IUserRegistrationData = {
         name: this.registrationForm.value.userName,
         login: this.registrationForm.value.email,
         password: this.registrationForm.value.password,
       };
-
       this.authService.registration(userData);
     }
   }

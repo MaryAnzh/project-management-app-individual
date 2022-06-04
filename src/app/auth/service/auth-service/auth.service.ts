@@ -7,8 +7,10 @@ import { RequestService } from 'src/app/core/service/request/request.service';
 
 import {
   IUserStorage,
-  IUseRegistrationData,
-  IUseRegistrationResponse
+  IUserRegistrationData,
+  IUserRegistrationResponse,
+  IUserLoginData,
+  IUserLoginResponse
 } from 'src/app/core/model/user.model';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -35,10 +37,26 @@ export class AuthService {
     }
   }
 
-  registration(user: IUseRegistrationData): Observable<IUseRegistrationResponse> {
+  registration(user: IUserRegistrationData): Observable<IUserRegistrationResponse> {
     let result = this.requestService.createUser(user);
 
     let subscription: Subscription = result.subscribe(v => { console.log(`kyky: ${v.name}`); subscription.unsubscribe(); });
+
+    return result;
+  }
+
+  login(user: IUserLoginData): Observable<IUserLoginResponse> {
+    const result: Observable<IUserLoginResponse> = this.requestService.loginUser(user);
+
+    let subscription: Subscription = result.subscribe({
+      next: (value) => {
+
+      },
+      error: (error) => {
+
+      },
+      complete: () => subscription.unsubscribe(),
+    });
 
     return result;
   }

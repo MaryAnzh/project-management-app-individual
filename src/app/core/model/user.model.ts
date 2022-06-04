@@ -1,21 +1,27 @@
-export interface IUseRegistrationData {
+export interface IUser {
+  id: string,
+  name: string,
+  login: string
+}
+
+export interface IUserRegistrationData {
   name: string,
   login: string,
   password: string,
 }
 
-export interface IUseRegistrationResponse {
+export interface IUserRegistrationResponse {
   id: string,
   name: string,
   login: string
 };
 
-export interface IUseLoginData {
+export interface IUserLoginData {
   login: string,
   password: string,
 }
 
-export interface IUseLoginRespons {
+export interface IUserLoginResponse {
   token: string,
 };
 

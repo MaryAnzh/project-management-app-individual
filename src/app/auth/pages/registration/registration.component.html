@@ -99,7 +99,7 @@
           {{'AUTH.VALIDATE.LOWER_CASE_VALIDATE' | translate}}
         </li>
         <li
-        @flyInOut
+          @flyInOut
           *ngIf="password.errors?.['upperCaseTest']">
           {{'AUTH.VALIDATE.UPPER_CASE_VALIDATE' | translate}}
         </li>
@@ -109,7 +109,7 @@
           {{'AUTH.VALIDATE.DIGT_VALIDATE' | translate}}
         </li>
         <li
-        @flyInOut
+          @flyInOut
           @flyInOut
           *ngIf="password.errors?.['specSymbolTest']">
           {{'AUTH.VALIDATE.SYMBOL_VALIDATE' | translate}}
@@ -119,25 +119,21 @@
   </div>
 
   <div class="auth-form__field">
-    <label for="email">{{'AUTH.INPUTS.EMAIL' | translate}}</label>
+    <label for="confirm-password">{{'AUTH.INPUTS.CONFIRM_PASSWORD' | translate}}</label>
     <input
-      type="text"
-      name="email"
-      formControlName="email"
+      type="password"
+      name="confirm-password"
+      formControlName="confirmPassword"
       maxlength="31">
   </div>
   <div class="auth-form__error">
     <ng-container
-      *ngIf="email.invalid
-      && (email.touched
-      || email.dirty)">
+      *ngIf="confirmPassword?.invalid
+      && (confirmPassword?.touched || confirmPassword?.dirty)">
       <p
-        *ngIf="email.errors?.['required']">
-        {{'AUTH.VALIDATE.EMAIL_REQUIRED' | translate}}
-      </p>
-      <p
-        *ngIf="email.errors?.['email']">
-        {{'AUTH.VALIDATE.EMAIL_VALID_EMAIL' | translate}}
+      *ngIf="confirmPassword?.errors?.['notSame'] ||
+        confirmPassword?.errors?.['required']">
+        {{'AUTH.VALIDATE.CONFIRM_PASSWORD_REQUIRED' | translate}}
       </p>
     </ng-container>
   </div>

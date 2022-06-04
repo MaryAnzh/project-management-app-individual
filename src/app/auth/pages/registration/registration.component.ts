@@ -27,6 +27,16 @@ import {
         animate(500, style({ transform: 'translateX(100%)' })),
       ])
     ]),
+    trigger('openClose2', [
+      state('in', style({ height: 100, opacity: 0 })),
+      state('out', style({ height: 0, opacity: 0 })),
+      transition('void => *', [
+        animate('.3s ease-out'),
+      ]),
+      transition('* => void', [
+        animate('.3s ease-out'),
+      ])
+    ]),
     trigger('openClose', [
       transition(':enter', [
         style({ height: 0, opacity: 0 }),

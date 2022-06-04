@@ -17,38 +17,15 @@ import {
     './registration.component.scss',
     '../form.scss'],
   animations: [
-    // trigger('openClose', [
-    //   state('open', style({
-    //     height: '84px',
-    //     opacity: 1,
-    //   })),
-    //   state('closed', style({
-    //     height: '30px',
-    //     opacity: 0,
-    //   })),
-    //   transition('open => closed', [
-    //     animate('1s')
-    //   ]),
-    //   transition('closed => open', [
-    //     animate('0.5s')
-    //   ]),
-    // ]
-
-    // ),
-    trigger('visibleHidden', [
-      state('visible', style({
-        marginLeft: 0,
-      })),
-      state('hidden', style({
-        marginLeft: '-100%',
-      })),
-      transition(':enter', [
-        animate('1s')
+    trigger('flyInOut', [
+      state('in', style({ transform: 'translateX(0)'})),
+      transition('void => *', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(500),
       ]),
-      transition(':leave', [
-        animate('1s')
-      ]),
-
+      transition('* => void', [
+        animate(500, style({ transform: 'translateX(100%)' })),
+      ])
     ]),
     trigger('openClose', [
       transition(':enter', [

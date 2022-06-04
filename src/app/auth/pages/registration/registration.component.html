@@ -69,17 +69,16 @@
     <ng-container
       *ngIf="password.invalid
       && (password.touched
-      || password.dirty)"
-      [@inOutAnimation]>
+      || password.dirty)">
       <p
         *ngIf="password.errors?.['required']">
         {{'AUTH.VALIDATE.PASSWORD_REQUIRED' | translate}}
       </p>
     </ng-container>
   </div>
-  <div>
+  <div class="error-list">
     <ng-container>
-      <ul class="test"
+      <ul
         @openClose
         *ngIf="(password.errors?.['minlength']
         || password.errors?.['lowerCaseTest']
@@ -89,23 +88,29 @@
         && !password.errors?.['required']">
         {{'AUTH.VALIDATE.CONTAIN' | translate}}
         <li
+          @flyInOut
           *ngIf="password.errors?.['minlength']">
-          {{'AUTH.VALIDATE.CONTAIN' | translate}} 8 {{'AUTH.VALIDATE.SYMBOLS' |
+          8 {{'AUTH.VALIDATE.SYMBOLS' |
           translate}}
         </li>
         <li
+          @flyInOut
           *ngIf="password.errors?.['lowerCaseTest']">
           {{'AUTH.VALIDATE.LOWER_CASE_VALIDATE' | translate}}
         </li>
         <li
+        @flyInOut
           *ngIf="password.errors?.['upperCaseTest']">
           {{'AUTH.VALIDATE.UPPER_CASE_VALIDATE' | translate}}
         </li>
         <li
+          @flyInOut
           *ngIf="password.errors?.['numberTest']">
           {{'AUTH.VALIDATE.DIGT_VALIDATE' | translate}}
         </li>
         <li
+        @flyInOut
+          @flyInOut
           *ngIf="password.errors?.['specSymbolTest']">
           {{'AUTH.VALIDATE.SYMBOL_VALIDATE' | translate}}
         </li>
@@ -113,7 +118,7 @@
     </ng-container>
   </div>
 
-    <div class="auth-form__field">
+  <div class="auth-form__field">
     <label for="email">{{'AUTH.INPUTS.EMAIL' | translate}}</label>
     <input
       type="text"

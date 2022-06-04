@@ -4,14 +4,22 @@
   padding: 10px 0;
 }
 
-ul {
-  li {
-    transition: .5s;
+.error-list {
+  width: 100%;
 
+  ul {
+    height: 100px;
+    display: block;
+    overflow: hidden;
   }
 }
 
-.test {
-height: 100px;
-}
+// .test {
 
+//   transition: transform 500ms cubic-bezier(0, 0, 0.2, 1);
+
+//   li {
+//     //line-height: 1em;
+//     transition: transform 500ms cubic-bezier(0, 0, 0.2, 1);
+//   }
+// }

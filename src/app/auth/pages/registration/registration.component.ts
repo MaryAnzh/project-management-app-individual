@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'src/app/shared/utils/CustomValidators';
-import { IUseRegistrationData } from 'src/app/core/model/user.model';
+
+import { AuthService } from '../../service/auth-service/auth.service';
+
+import { IUserRegistrationData } from 'src/app/core/model/user.model';
 import {
   trigger,
   state,
@@ -43,15 +46,9 @@ import {
 export class RegistrationComponent implements OnInit {
   registrationForm!: FormGroup;
 
-  public test: boolean = false;
-
-  testA() {
-    this.test = !this.test;
-    console.log('this.test');
-    console.log(this.test);
-  }
-
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.registrationForm = new FormGroup({
@@ -104,14 +101,12 @@ export class RegistrationComponent implements OnInit {
   onSubmit(): void {
     if (this.registrationForm.valid) {
 
-      const userData: IUseRegistrationData = {
+      const userData: IUserRegistrationData = {
         name: this.registrationForm.value.userName,
         login: this.registrationForm.value.email,
         password: this.registrationForm.value.password,
       };
-      console.log('userData');
-      console.log(userData);
-      //this.authService.registration(userData);
+      this.authService.registration(userData);
     }
   }
 }

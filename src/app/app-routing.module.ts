@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guard/auth.guard';
+
+import { BoardsModule } from './boards/boards.module';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
 import { welcomeComponent } from './core/pages/welcome/welcome.component';
 import { LoginComponent } from './auth/pages/login/login.component';
@@ -9,33 +12,35 @@ import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.com
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'welcome',
+    redirectTo: 'boards',
     pathMatch: 'full',
   },
   {
-    path: 'welcome',
-    component: welcomeComponent
+    path: 'boards',
+    loadChildren: () => import('./boards/boards.module').then(m => m.BoardsModule),
+    canActivate: [AuthGuard],
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'welcome',
+    component: welcomeComponent,
   },
   {
     path: 'registration',
-    component: RegistrationComponent
+    component: RegistrationComponent,
   },
   {
-    path: '',
-    component: EditProfileComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'boards',
-    loadChildren: () => import('./boards/boards.module').then(m => m.BoardsModule)
+    path: 'edit-profile',
+    component: EditProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',
-    component: PageNotFoundComponent
-  },
+    component: PageNotFoundComponent,
+  }
 ];
 
 @NgModule({

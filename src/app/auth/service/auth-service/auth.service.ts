@@ -59,7 +59,6 @@ export class AuthService {
           date: new Date().toString(),
         }
         this.storage.setData('user', storageData);
-        this.router.navigateByUrl('/main');
 
         let newSubscription: Subscription = this.requestService.getUsers().pipe(
           map((person) => {
@@ -72,6 +71,7 @@ export class AuthService {
               storageData.id = person.id;
               this.storage.setData('user', storageData);
               this._user$$.next(storageData);
+              this.router.navigateByUrl('/boards');
             }
           },
           error: (error) => console.error(error),
@@ -84,7 +84,6 @@ export class AuthService {
       },
       complete: () => subscription.unsubscribe(),
     });
-
     return result;
   }
 

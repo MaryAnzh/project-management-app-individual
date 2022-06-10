@@ -15,11 +15,14 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule, HttpParamsOptions } from '@angular/common/http';
 import { enableProdMode } from '@angular/core';
+import { reducers, metaReducers } from './redux/reducers';
 
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegistrationComponent } from './auth/pages/registration/registration.component';
 import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.component';
-import { reducers, metaReducers } from './redux/reducers';
+import { welcomeComponent } from './welcome/pages/welcome/welcome.component';
+import { DevelopmentProcessCardComponent } from './welcome/components/development-process-card/development-process-card.component';
+import { DevelopmentProcessCardDescriptionComponent } from './welcome/components/development-process-card-description/development-process-card-description.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -36,6 +39,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     LoginComponent,
     RegistrationComponent,
     EditProfileComponent,
+    welcomeComponent,
+    DevelopmentProcessCardComponent,
+    DevelopmentProcessCardDescriptionComponent
   ],
   imports: [
     BrowserModule,

@@ -38,6 +38,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 npm install -g heroku
 heroku --version
 
+
 1.2 Clone Backend repo:
 
 git clone https://github.com/vitaly-sazonov/kanban-rest.git

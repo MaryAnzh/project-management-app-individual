@@ -6,10 +6,10 @@
     "LOGOUT": "Выйти",
     "REGISTRATION": "Регистрация",
     "HELLO": "Привет",
-    "NAV":{
+    "NAV": {
       "welcomeE": "Приветствие",
       "BOARDS": "Мои доски",
-      "CREATE_BOARD":"Создать доску",
+      "CREATE_BOARD": "Создать доску",
       "EDIT_PROFILE": "Редактировать профиль"
     }
   },
@@ -19,9 +19,17 @@
     "TITLE_DESCRIPTION": "Индивидуальный проект на базе финального задания по курсу Angular 2022Q1",
     "SUBTITLE": "Наши преимущества",
     "DEVELOPMENT_PROCESS": "Процесс разработки",
+    "MORE_INFO": "Нажмите на карточку для детализации",
     "BACKEND": "Бекэнд",
     "DEPLOY_BACKEND": "Деплой бекэнда на Heroku",
-    "INSTALL_ANGULAR": "Установка Angular"
+    "INSTALL_ANGULAR": "Установка Angular",
+    "CARDS": {
+      "BACKEND": {
+        "1": "Регистрация на Heroku и инстал heroku",
+        "2": "Копируем репозиторий с бекэндом",
+        "3": "Деалой на Heroku"
+      }
+    }
   },
   "AUTH": {
     "LOGIN_TITLE": "Вход",
@@ -42,11 +50,11 @@
       "CONFIRM_NEW_PASSWORD": "Подтвердите новый пароль"
     },
     "VALIDATE": {
-      "EMAIL_REQUIRED":"Пожалуйста, введите адрес элетронной почты",
-      "EMAIL_VALID_EMAIL":"Адрес электронной почты недействителен",
-      "PASSWORD_REQUIRED":"Пожалуйста, введите пароль",
-      "USER_NAME_REQUIRED":"Пожалуйста, введите имя пользователя",
-      "USER_NAME_MINLENGTH":"длина должна быть не менее 3 символов",
+      "EMAIL_REQUIRED": "Пожалуйста, введите адрес элетронной почты",
+      "EMAIL_VALID_EMAIL": "Адрес электронной почты недействителен",
+      "PASSWORD_REQUIRED": "Пожалуйста, введите пароль",
+      "USER_NAME_REQUIRED": "Пожалуйста, введите имя пользователя",
+      "USER_NAME_MINLENGTH": "длина должна быть не менее 3 символов",
       "USER_NAME_MAXLENGTH": "длина должна быть менее 30 символов",
       "AT_LEAST": "не менее",
       "SYMBOLS": "символов",
@@ -87,9 +95,9 @@
       "CANCEL": "Отмена"
     },
     "VALIDATE": {
-      "TITLE_REQUIRED":"Пожалуйста, введите название",
-      "DISCRIPTION_REQUIRED":"Пожалуйста, введите описание",
-      "MAXLENGTH":"длина должна быть не более",
+      "TITLE_REQUIRED": "Пожалуйста, введите название",
+      "DISCRIPTION_REQUIRED": "Пожалуйста, введите описание",
+      "MAXLENGTH": "длина должна быть не более",
       "SYMBOLS": "символов"
     },
     "ERRORS": {

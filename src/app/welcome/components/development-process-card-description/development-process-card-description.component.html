@@ -21,7 +21,7 @@
           *ngFor="let li of currentCard.description; let i= index">
 
           <li class="card-description__text__main-list__item">
-            <p>{{i + 1}}. {{li.text}}</p>
+            <p>{{i + 1}}. {{li.text | translate}}</p>
             <ul
               *ngFor="let code of li.code">
               <li>{{code}}</li>

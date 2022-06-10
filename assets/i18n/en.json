@@ -15,6 +15,8 @@
   },
   "MAIN": {
     "TITLE": "Project management app - Your Way to Success!!!",
+    "TITLE_APP": "Project management app",
+    "TITLE_DESCRIPTION": "This is personal project, by Angular 2022Q1 course final task, with modifications",
     "SUBTITLE": "Our advantages",
     "TEXT_1": "Effective project management with visualization and task flow",
     "TEXT_2": "Transparent workflow with real-time tracking of changes",

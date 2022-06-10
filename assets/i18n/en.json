@@ -28,7 +28,14 @@
         "1": "Pegistration to Heroku and install heroku",
         "2": "Clone Backend repo",
         "3": "Deploy on Heroku"
-      }
+      },
+      "ANGULAR": {
+        "1": "Create Project",
+        "2": "Add angular-cli-ghpages",
+        "3": "To change angular.json",
+        "4": "To start"
+      },
+      "ESLINT": "Add ESLint"
     }
   },
   "AUTH": {

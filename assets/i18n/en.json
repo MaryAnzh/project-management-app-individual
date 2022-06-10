@@ -19,9 +19,17 @@
     "TITLE_DESCRIPTION": "This is personal project, by Angular 2022Q1 course final task, with modifications",
     "SUBTITLE": "Our advantages",
     "DEVELOPMENT_PROCESS": "Development process",
+    "MORE_INFO": "Click on card to get extended info",
     "BACKEND": "Backend",
     "DEPLOY_BACKEND": "Deploy backend on Heroku",
-    "INSTALL_ANGULAR": "Install and configure Angular"
+    "INSTALL_ANGULAR": "Install and configure Angular",
+    "CARDS": {
+      "BACKEND": {
+        "1": "Pegistration to Heroku and install heroku",
+        "2": "Clone Backend repo",
+        "3": "Deploy on Heroku"
+      }
+    }
   },
   "AUTH": {
     "LOGIN_TITLE": "Login",

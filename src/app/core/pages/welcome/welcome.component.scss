@@ -1,13 +1,55 @@
+@import '../../../../vareable';
+
 :host {
-  button {
-    cursor: pointer;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    &:hover {
-      background: blue;
-    }
+  .main-info {
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background: $mainColorLight2;
+    border-radius: 10px;
 
-    &:active {
-      background: wheat;
+    &__about {
+      width: 720px;
+      padding: 20px;
+      background: white;
+      border: 1px dashed $mainColorDark;
+      border-radius: 5px 5px 30px 5px;
+      box-shadow: 4px 4px 4px 0px rgba(34, 60, 80, 0.2);
+
+      &__project {
+        margin: 4rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__avatar {
+          img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+          }
+        }
+
+        &__description {
+          height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 0 20px;
+          font-size: 16px;
+        }
+      }
+
+
     }
   }
 }

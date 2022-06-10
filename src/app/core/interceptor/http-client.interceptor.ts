@@ -26,7 +26,7 @@ export class HTTPClientInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let token = '';
     let url = '';
-
+    console.log('Hello');
     if (request.url.indexOf('assets/i18n') === -1) {
       const user: IUserStorage | null = this.storageService.getData('user');
       token = user ? user.token : '';

@@ -1,4 +1,5 @@
 <app-development-process-card-description
+*ngIf="currentCard$ | async as currentCard"
 [currentCard]="currentCard"
 ></app-development-process-card-description>
 

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IDevelopmentProcessCard } from '../../model/development-process-card.model';
+import { WelcomeService } from '../../service/welcomeService/welcome.service';
 
 @Component({
   selector: 'app-development-process-card',
@@ -9,4 +10,14 @@ import { IDevelopmentProcessCard } from '../../model/development-process-card.mo
 
 export class DevelopmentProcessCardComponent {
   @Input() public card: IDevelopmentProcessCard | undefined = undefined;
+
+  constructor(
+    private welcomeServic: WelcomeService
+  ) { }
+
+  cardOnClick() {
+    if (this.card) {
+      this.welcomeServic.updateCurrentCard(this.card);
+    }
+  }
 }

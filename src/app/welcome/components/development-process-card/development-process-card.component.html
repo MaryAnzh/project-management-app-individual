@@ -1,7 +1,7 @@
 
 <section class="card"
-
-*ngIf="card">
+*ngIf="card"
+(click)="cardOnClick()">
 <h3>{{card.title | translate}}</h3>
 <p>{{card.shortDescription | translate}}</p>
 </section>

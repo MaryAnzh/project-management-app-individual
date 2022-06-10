@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IDevelopmentProcessCard } from '../../model/development-process-card.model';
+import { WelcomeService } from '../../service/welcomeService/welcome.service';
 
 @Component({
   selector: 'app-development-process-card-description',
@@ -9,4 +10,14 @@ import { IDevelopmentProcessCard } from '../../model/development-process-card.mo
 
 export class DevelopmentProcessCardDescriptionComponent {
   @Input() public currentCard: IDevelopmentProcessCard | undefined = undefined;
+
+  constructor(
+    private welcomeService: WelcomeService
+  ) {
+
+}
+
+  close(): void {
+    this.welcomeService.updateCurrentCard(null);
+  }
 }

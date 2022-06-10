@@ -1,6 +1,7 @@
 <div class="card-description"
   *ngIf="currentCard">
-  <div class="card-description__cross">
+  <div class="card-description__cross"
+  (click)="close()">
     <svg
       viewBox="0 0 30 30">
       <path
@@ -12,8 +13,8 @@
           c0.78,0.78,0.78,2.05,0,2.83C25.57,26.35,25.06,26.55,24.55,26.55z" />
         </svg>
       </div>
-      <h2>{{currentCard.title}}</h2>
-      <h3>{{currentCard.shortDescription}}</h3>
+      <h2>{{currentCard.title | translate}}</h2>
+      <h3>{{currentCard.shortDescription | translate}}</h3>
 
       <div class="card-description__text">
         <ul class="card-description__text__main-list"

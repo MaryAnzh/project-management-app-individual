@@ -4,7 +4,7 @@ import { AuthGuard } from './core/guard/auth.guard';
 
 import { BoardsModule } from './boards/boards.module';
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
-import { welcomeComponent } from './core/pages/welcome/welcome.component';
+import { welcomeComponent } from './welcome/pages/welcome/welcome.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegistrationComponent } from './auth/pages/registration/registration.component';
 import { EditProfileComponent } from './auth/pages/edit-profile/edit-profile.component';

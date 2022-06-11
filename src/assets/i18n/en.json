@@ -6,26 +6,39 @@
     "LOGOUT": "Logout",
     "REGISTRATION": "Registration",
     "HELLO": "Hello",
-    "NAV":{
+    "NAV": {
       "welcome": "welcome",
       "BOARDS": "My Boards",
-      "CREATE_BOARD":"Create new board",
+      "CREATE_BOARD": "Create new board",
       "EDIT_PROFILE": "Edit profile"
     }
   },
   "MAIN": {
     "TITLE": "Project management app - Your Way to Success!!!",
+    "TITLE_APP": "Project management app",
+    "TITLE_DESCRIPTION": "This is personal project, by Angular 2022Q1 course final task, with modifications",
     "SUBTITLE": "Our advantages",
-    "TEXT_1": "Effective project management with visualization and task flow",
-    "TEXT_2": "Transparent workflow with real-time tracking of changes",
-    "TEXT_3": "Ease of implementation, optimization of working time and costs",
-    "TEAM": {
-      "TITLE": "OUR TEAM",
-      "ABOUT_US": {
-        "MARY": "Project Manager. Full stack developer.\t We are a team of students at The Rolling Scopes School developing the Project Management App. Time is the most precious thing in our life. Let's organize it right!",
-        "DIMA": "Fullstack developer. We are committed to effective project management so that your goals are achieved faster and at the lowest cost.",
-        "MARGO": "Frontend developer. We are working on setting up a connection between man and space, creating a harmony of their interaction."
-      }
+    "DEVELOPMENT_PROCESS": "Development process",
+    "MORE_INFO": "Click on card to get extended info",
+    "BACKEND": "Backend",
+    "DEPLOY_BACKEND": "Deploy backend on Heroku",
+    "INSTALL_ANGULAR": "Install and configure Angular",
+    "APP_STRUCTURE": "Create  Application Structure",
+    "INTERCEPTOR": "Add Interceptor",
+    "CARDS": {
+      "BACKEND": {
+        "1": "Pegistration to Heroku and install heroku",
+        "2": "Clone Backend repo",
+        "3": "Deploy on Heroku"
+      },
+      "ANGULAR": {
+        "1": "Create Project",
+        "2": "Add angular-cli-ghpages",
+        "3": "To change angular.json",
+        "4": "To start"
+      },
+      "ESLINT": "Add ESLint",
+      "INTERCEPTOR": "Add Interceptor"
     }
   },
   "AUTH": {
@@ -47,11 +60,11 @@
       "CONFIRM_NEW_PASSWORD": "Сonfirm New Password"
     },
     "VALIDATE": {
-      "EMAIL_REQUIRED":"Please enter a login email",
-      "EMAIL_VALID_EMAIL":"The login email is invalid",
-      "PASSWORD_REQUIRED":"Please enter a password",
-      "USER_NAME_REQUIRED":"Please enter a user-name",
-      "USER_NAME_MINLENGTH":"length must be at least 3 characters",
+      "EMAIL_REQUIRED": "Please enter a login email",
+      "EMAIL_VALID_EMAIL": "The login email is invalid",
+      "PASSWORD_REQUIRED": "Please enter a password",
+      "USER_NAME_REQUIRED": "Please enter a user-name",
+      "USER_NAME_MINLENGTH": "length must be at least 3 characters",
       "USER_NAME_MAXLENGTH": "length must be shortest 30 characters",
       "AT_LEAST": "at least",
       "SYMBOLS": "symbols",
@@ -67,7 +80,6 @@
       "REGISTRATION": "Registration",
       "DELETE_PROFILE": "Delete Profile",
       "UPDATE_PROFILE": "Uptdate Profile"
-
     }
   },
   "BOARDS": {
@@ -93,9 +105,9 @@
       "CANCEL": "Cancel"
     },
     "VALIDATE": {
-      "TITLE_REQUIRED":"Please enter a Title",
-      "DISCRIPTION_REQUIRED":"Please enter a Description",
-      "MAXLENGTH":"length should not exceed",
+      "TITLE_REQUIRED": "Please enter a Title",
+      "DISCRIPTION_REQUIRED": "Please enter a Description",
+      "MAXLENGTH": "length should not exceed",
       "SYMBOLS": "symbols"
     },
     "ERRORS": {

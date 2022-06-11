@@ -5,14 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { welcomeComponent } from './pages/welcome/welcome.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     PageNotFoundComponent,
-    welcomeComponent,
     HeaderComponent,
     FooterComponent,
   ],

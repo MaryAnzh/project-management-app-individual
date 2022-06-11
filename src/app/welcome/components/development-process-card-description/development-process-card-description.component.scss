@@ -1,0 +1,98 @@
+@import '../../../../vareable';
+
+:host {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $additionalDark;
+  font-size: 22px;
+  z-index: 2;
+
+  h2,
+  h3 {
+    color: $additionalDark;
+    margin-bottom: 20px;
+
+    @media (max-width: 720px) {
+      font-size: 20px;
+    }
+  }
+
+  .card-description {
+    max-width: 720px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    margin: 0 10px;
+    border-radius: 20px;
+
+    @media (max-width: 720px) {
+      max-height: 100vh;
+      height: 100%;
+      margin: 0;
+      padding: 0 5px;
+      overflow: scroll;
+    }
+
+    &__cross {
+      width: 40px;
+      height: 40px;
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 2px solid $mainColor;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        background: $mainColor;
+      }
+
+      &:hover svg {
+        fill: white;
+      }
+
+      svg {
+        width: 30px;
+        height: 35px;
+        fill: $mainColor;
+      }
+    }
+
+    &__text {
+      width: 100%;
+
+      &__main-list {
+        padding-left: 10px;
+
+        &__item {
+          padding-bottom: 20px;
+
+          @media (max-width: 720px) {
+            font-size: 16px;
+          }
+
+          li {
+            padding-left: 20px;
+            padding-top: 10px;
+            font-size: 18px;
+
+            @media (max-width: 720px) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

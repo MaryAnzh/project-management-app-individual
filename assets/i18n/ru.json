@@ -23,6 +23,8 @@
     "BACKEND": "Бекэнд",
     "DEPLOY_BACKEND": "Деплой бекэнда на Heroku",
     "INSTALL_ANGULAR": "Установка Angular",
+    "APP_STRUCTURE": "Создание структуры приложения",
+    "INTERCEPTOR": "Добавлен Interceptor",
     "CARDS": {
       "BACKEND": {
         "1": "Регистрация на Heroku и инстал heroku",
@@ -35,7 +37,7 @@
         "3": "Изменяем angular.json",
         "4": "Для запуска"
       },
-      "ESLINT": "Добавляем ESLint"
+      "ESLINT": "Добавлен ESLint"
     }
   },
   "AUTH": {

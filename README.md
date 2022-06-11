@@ -57,7 +57,7 @@ heroku config:set JWT_SECRET_KEY=secret-key
 heroku config:set SALT_SIZE=10
 heroku config:set USE_FASTIFY=true
     
-//пвщим ветку
+//пущим ветку
 git push heroku source
     
 // делаем мерж, на Хероку автоматический билд при мерже в main
@@ -80,9 +80,6 @@ npm i angular-cli-ghpages --save-dev
 // для запуска
 
 ng deploy --base-href="https://maryanzh.github.io/project-management-app-individual/"
-Добавляем скрипт 
-
-"deploy": "ng deploy --base-href='https://maryanzh.github.io/project-management-app-individual/'",
 
 2.3 Добавление ESLint
 //вводим ng lint , и терминал сам предложит те команды, которые нужно установить

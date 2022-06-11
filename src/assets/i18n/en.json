@@ -23,12 +23,22 @@
     "BACKEND": "Backend",
     "DEPLOY_BACKEND": "Deploy backend on Heroku",
     "INSTALL_ANGULAR": "Install and configure Angular",
+    "APP_STRUCTURE": "Create  Application Structure",
+    "INTERCEPTOR": "Add Interceptor",
     "CARDS": {
       "BACKEND": {
         "1": "Pegistration to Heroku and install heroku",
         "2": "Clone Backend repo",
         "3": "Deploy on Heroku"
-      }
+      },
+      "ANGULAR": {
+        "1": "Create Project",
+        "2": "Add angular-cli-ghpages",
+        "3": "To change angular.json",
+        "4": "To start"
+      },
+      "ESLINT": "Add ESLint",
+      "INTERCEPTOR": "Add Interceptor"
     }
   },
   "AUTH": {

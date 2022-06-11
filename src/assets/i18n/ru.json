@@ -23,12 +23,21 @@
     "BACKEND": "Бекэнд",
     "DEPLOY_BACKEND": "Деплой бекэнда на Heroku",
     "INSTALL_ANGULAR": "Установка Angular",
+    "APP_STRUCTURE": "Создание структуры приложения",
+    "INTERCEPTOR": "Добавлен Interceptor",
     "CARDS": {
       "BACKEND": {
         "1": "Регистрация на Heroku и инстал heroku",
         "2": "Копируем репозиторий с бекэндом",
-        "3": "Деалой на Heroku"
-      }
+        "3": "Деплой на Heroku"
+      },
+      "ANGULAR": {
+        "1": "Создаем проект",
+        "2": "Добавляем angular-cli-ghpages",
+        "3": "Изменяем angular.json",
+        "4": "Для запуска"
+      },
+      "ESLINT": "Добавлен ESLint"
     }
   },
   "AUTH": {

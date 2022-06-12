@@ -1,4 +1,7 @@
 {
+  "GENERAL": {
+    "ADD": "Add"
+  },
   "HEADER": {
     "YOUR_WAY": "Your Way",
     "TO_SUCCESS": "to Success",
@@ -25,6 +28,7 @@
     "INSTALL_ANGULAR": "Install and configure Angular",
     "APP_STRUCTURE": "Create  Application Structure",
     "INTERCEPTOR": "Add Interceptor",
+    "BOARDS__CARD": "Layout boards page",
     "CARDS": {
       "BACKEND": {
         "1": "Pegistration to Heroku and install heroku",
@@ -38,7 +42,10 @@
         "4": "To start"
       },
       "ESLINT": "Add ESLint",
-      "INTERCEPTOR": "Add Interceptor"
+      "INTERCEPTOR": "Add Interceptor",
+      "BOARDS": {
+        "1": "Add board-card component"
+      }
     }
   },
   "AUTH": {
@@ -83,7 +90,8 @@
     }
   },
   "BOARDS": {
-    "MY_BOARDS": "My Boards",
+    "BOARDS_HEADER": "Boards",
+    "NO_BOARDS": "No Boards",
     "BOARD_TITLE": "Board Title",
     "BOARD_DESCRIPTION": "Board description",
     "ERROR": "Error",

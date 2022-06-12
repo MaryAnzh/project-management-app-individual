@@ -1,4 +1,7 @@
 {
+  "GENERAL": {
+    "ADD": "добавлен"
+  },
   "HEADER": {
     "YOUR_WAY": "Твой путь",
     "TO_SUCCESS": "к успеху",
@@ -25,6 +28,7 @@
     "INSTALL_ANGULAR": "Установка Angular",
     "APP_STRUCTURE": "Создание структуры приложения",
     "INTERCEPTOR": "Добавлен Interceptor",
+    "BOARDS{{": "Верстка страницы boards",
     "CARDS": {
       "BACKEND": {
         "1": "Регистрация на Heroku и инстал heroku",
@@ -37,7 +41,10 @@
         "3": "Изменяем angular.json",
         "4": "Для запуска"
       },
-      "ESLINT": "Добавлен ESLint"
+      "ESLINT": "Добавлен ESLint",
+      "BOARDS": {
+        "1": "Добавлен board-card компонент"
+      }
     }
   },
   "AUTH": {
@@ -82,7 +89,8 @@
     }
   },
   "BOARDS": {
-    "MY_BOARDS": "Мои доски",
+    "BOARDS_HEADER": "Борды",
+    "NO_BOARDS": "Бордов нет",
     "BOARD_TITLE": "Название",
     "BOARD_DESCRIPTION": "Описание",
     "ERROR": "Ошибка",

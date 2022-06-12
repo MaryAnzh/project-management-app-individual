@@ -14,7 +14,6 @@ import { environment } from '../environments/environment';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule, HttpParamsOptions } from '@angular/common/http';
-import { enableProdMode } from '@angular/core';
 import { reducers, metaReducers } from './redux/reducers';
 
 import { LoginComponent } from './auth/pages/login/login.component';

@@ -1,0 +1,26 @@
+@import '../../vareable';
+
+:host {
+  max-width: 1200px;
+  width: 100%;
+  height: calc(100vh - 220px);
+
+  .boards-wrap {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: $mainColorLight2;
+
+    &__empty {
+      width: 100%;
+
+      p {
+        text-align: center;
+      }
+    }
+
+  }
+}

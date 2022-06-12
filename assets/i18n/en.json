@@ -44,7 +44,8 @@
       "ESLINT": "Add ESLint",
       "INTERCEPTOR": "Add Interceptor",
       "BOARDS": {
-        "1": "Add board-card component"
+        "1": "Add board-card component",
+        "2": "Add translate library in boards module"
       }
     }
   },

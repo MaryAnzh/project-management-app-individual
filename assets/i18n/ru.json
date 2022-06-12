@@ -28,7 +28,7 @@
     "INSTALL_ANGULAR": "Установка Angular",
     "APP_STRUCTURE": "Создание структуры приложения",
     "INTERCEPTOR": "Добавлен Interceptor",
-    "BOARDS{{": "Верстка страницы boards",
+    "BOARDS__CARD": "Верстка страницы бордов",
     "CARDS": {
       "BACKEND": {
         "1": "Регистрация на Heroku и инстал heroku",
@@ -43,7 +43,8 @@
       },
       "ESLINT": "Добавлен ESLint",
       "BOARDS": {
-        "1": "Добавлен board-card компонент"
+        "1": "Добавлен board-card компонент",
+        "2": "Добавление Translate библиотеки в boards module"
       }
     }
   },

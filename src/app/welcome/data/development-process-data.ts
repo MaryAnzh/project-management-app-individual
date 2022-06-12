@@ -152,7 +152,13 @@ export const developmentProcessData = [
         code: [
           'ng g component board-card',
         ]
-      }
+      },
+      {
+    text: 'MAIN.CARDS.BOARDS.2',
+    code: [
+      `import { TranslateModule } from '@ngx-translate/core';`,
+    ]
+  },
     ]
 
 

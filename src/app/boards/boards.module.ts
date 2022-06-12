@@ -5,12 +5,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BoardsRoutingModule } from './boards-routing.module';
 import { BoardsComponent } from './boards.component';
 import { BoardComponent } from './pages/board/board.component';
-
+import { BoardCardComponent } from './components/board-card/board-card.component';
 
 @NgModule({
   declarations: [
     BoardsComponent,
-    BoardComponent
+    BoardComponent,
+    BoardCardComponent
   ],
   imports: [
     CommonModule,

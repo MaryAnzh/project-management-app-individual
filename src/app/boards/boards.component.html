@@ -1,8 +1,16 @@
 <h2>{{'BOARDS.BOARDS_HEADER' | translate}}</h2>
 
 <section class="boards-wrap">
-  <div class="boards-wrap__empty">
+  <div
+  *ngIf="boards$ | async as boards">
+    <div class="boards-wrap__empty"
+  *ngIf="boards.length === 0">
     <p>{{'BOARDS.NO_BOARDS' | translate}}</p>
+  </div>
+    <app-board-card
+    *ngFor="let board of boards"
+    [board]="board"
+    ></app-board-card>
   </div>
 
 </section>

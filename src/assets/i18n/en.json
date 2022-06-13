@@ -1,6 +1,9 @@
 {
   "GENERAL": {
-    "ADD": "Add"
+    "ADD": "Add",
+    "OPEN": "open",
+    "DELETE": "delete"
+
   },
   "HEADER": {
     "YOUR_WAY": "Your Way",

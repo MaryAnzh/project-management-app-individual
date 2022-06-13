@@ -88,11 +88,12 @@
         }
 
         &__buttons {
-          width: 180px;
+          width: 220px;
           padding: 10px;
           display: flex;
           align-items: center;
           justify-content: space-between;
+
           p {
             width: 100%;
             text-align: right;
@@ -101,9 +102,24 @@
           button {
             padding: 10px;
             margin-left: 10px;
-            background: $mainColorDark;
+            background: $mainColor;
             color: white;
             border: none;
+            transition: .3s;
+          }
+
+          button:nth-child(1) {
+            &:hover {
+              background: $mainColorDark;
+            }
+          }
+
+          button:nth-child(2) {
+            background: $contrastColorLight;
+
+            &:hover {
+              background: $contrastColor;
+            }
           }
         }
       }

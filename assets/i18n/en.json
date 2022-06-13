@@ -2,7 +2,8 @@
   "GENERAL": {
     "ADD": "Add",
     "OPEN": "open",
-    "DELETE": "delete"
+    "DELETE": "delete",
+    "CLOSE": "close"
 
   },
   "HEADER": {
@@ -32,6 +33,7 @@
     "APP_STRUCTURE": "Create  Application Structure",
     "INTERCEPTOR": "Add Interceptor",
     "BOARDS__CARD": "Layout boards page",
+    "BOARD_CREATE-FORM": "New Board -- create form",
     "CARDS": {
       "BACKEND": {
         "1": "Pegistration to Heroku and install heroku",

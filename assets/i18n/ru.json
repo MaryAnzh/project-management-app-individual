@@ -12,9 +12,9 @@
     "REGISTRATION": "Регистрация",
     "HELLO": "Привет",
     "NAV": {
-      "welcomeE": "Приветствие",
+      "WELCOMEE": "Приветствие",
       "BOARDS": "Мои доски",
-      "CREATE_BOARD": "Создать доску",
+      "CREATE_BOARD": "Создать борд",
       "EDIT_PROFILE": "Редактировать профиль"
     }
   },

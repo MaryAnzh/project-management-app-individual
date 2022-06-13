@@ -55,9 +55,24 @@
 
     &__empty {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      p {
-        text-align: center;
+      button {
+        width: 160px;
+        height: 35px;
+        margin-top: 20px;
+        color: white;
+        background: $mainColorDark;
+        border: 1px solid white;
+        transition: .3s;
+
+        &:hover {
+          background: $mainColorDark;
+          transform: scale(1.15);
+        }
+
       }
     }
 
@@ -100,7 +115,9 @@
           }
 
           button {
-            padding: 10px;
+            width: 84px;
+            height: 30px;
+
             margin-left: 10px;
             background: $mainColor;
             color: white;
@@ -109,6 +126,7 @@
           }
 
           button:nth-child(1) {
+
             &:hover {
               background: $mainColorDark;
             }

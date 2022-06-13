@@ -1,7 +1,9 @@
 <h2>{{'BOARDS.BOARDS_HEADER' | translate}}</h2>
 
-<section class="setting__view">
-  <div class="setting__view__icons">
+<section class="setting__view"
+*ngIf="boards$ | async as newBoards">
+  <div class="setting__view__icons"
+  *ngIf="newBoards.length !== 0">
     <svg
       [ngClass]="{'active': listView, 'active-not': !listView}"
       (click)="listView= true"
@@ -38,6 +40,7 @@
                                 </svg>
                               </div>
                             </section>
+
                             <section class="boards-wrap">
                               <ng-container
                                 *ngIf="boards$ | async as boards">
@@ -45,6 +48,9 @@
                                 <div class="boards-wrap__empty"
                                   *ngIf="boards.length === 0">
                                   <p>{{'BOARDS.NO_BOARDS' | translate}}</p>
+                                  <button>
+                                    {{'HEADER.NAV.CREATE_BOARD' | translate}}
+                                  </button>
                                 </div>
 
                                 <ng-container

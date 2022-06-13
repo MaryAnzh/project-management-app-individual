@@ -13,7 +13,7 @@
     "REGISTRATION": "Registration",
     "HELLO": "Hello",
     "NAV": {
-      "welcome": "welcome",
+      "WELCOME": "welcome",
       "BOARDS": "My Boards",
       "CREATE_BOARD": "Create new board",
       "EDIT_PROFILE": "Edit profile"

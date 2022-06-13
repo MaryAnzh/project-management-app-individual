@@ -49,6 +49,7 @@
     padding: 20px 10px;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
     background: $mainColorLight2;
@@ -70,7 +71,7 @@
 
         &:hover {
           background: $mainColorDark;
-          transform: scale(1.15);
+          transform: scale(1.15s);
         }
 
       }
@@ -140,6 +141,12 @@
             }
           }
         }
+      }
+
+      &__item:nth-child(1) {
+        background: $mainColorDark;
+        color: white;
+        border-right: 1px solid white;
       }
     }
   }

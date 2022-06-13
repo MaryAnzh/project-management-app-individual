@@ -51,3 +51,8 @@ button {
   opacity: 1;
   pointer-events: all;
 }
+
+.blocked {
+  opacity: .5;
+  pointer-events: none;
+}

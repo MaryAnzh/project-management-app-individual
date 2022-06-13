@@ -1,3 +1,7 @@
+<app-modal-create-board
+*ngIf="newBordFormOpen">
+
+</app-modal-create-board>
 <h2>{{'BOARDS.BOARDS_HEADER' | translate}}</h2>
 
 <section class="setting__view"
@@ -48,7 +52,8 @@
                                 <div class="boards-wrap__empty"
                                   *ngIf="boards.length === 0">
                                   <p>{{'BOARDS.NO_BOARDS' | translate}}</p>
-                                  <button>
+                                  <button
+                                  (click)="newBordFormOpen = true">
                                     {{'HEADER.NAV.CREATE_BOARD' | translate}}
                                   </button>
                                 </div>
@@ -61,8 +66,7 @@
                                 </ng-container>
                                 <ng-container
                                   *ngIf="!listView">
-                                  <ul class="boards-wrap__list"
-                                    *ngFor="let board of boards">
+                                  <ul class="boards-wrap__list">
                                     <li class="boards-wrap__list__item">
                                       <div
                                         class="boards-wrap__list__item__title">{{'BOARDS.BOARD_TITLE' | translate}}</div>
@@ -74,7 +78,8 @@
                                       </div>
                                     </li>
 
-                                    <li class="boards-wrap__list__item">
+                                    <li class="boards-wrap__list__item"
+                                    *ngFor="let board of boards">
                                       <div
                                         class="boards-wrap__list__item__title">{{board.title}}</div>
                                       <div

@@ -13,7 +13,7 @@ import { BoardsService } from './service/board-service/boards.service';
 export class BoardsComponent implements OnInit {
   @Input() public boards$: Observable<IBoardCard[] | null>
   public listView: boolean = false;
-
+  public newBordFormOpen: boolean = false;
   constructor(
     private boardsService: BoardsService,
     public translate: TranslateService

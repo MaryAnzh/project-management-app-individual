@@ -1,16 +1,72 @@
 <h2>{{'BOARDS.BOARDS_HEADER' | translate}}</h2>
 
-<section class="boards-wrap">
-  <div
-  *ngIf="boards$ | async as boards">
-    <div class="boards-wrap__empty"
-  *ngIf="boards.length === 0">
-    <p>{{'BOARDS.NO_BOARDS' | translate}}</p>
-  </div>
-    <app-board-card
-    *ngFor="let board of boards"
-    [board]="board"
-    ></app-board-card>
-  </div>
+<section class="setting__view">
+  <div class="setting__view__icons">
+    <svg
+    [ngClass]="{'active': listView, 'active-not': !listView}"
+    (click)="listView = true"
+      viewBox="0 0 50 50">
+      <path
+        d="M45.96,50H4.04C1.81,50,0,48.19,0,45.96V4.04C0,1.81,1.81,0,4.04,0h41.93C48.19,0,50,1.81,50,4.04v41.93
+        C50,48.19,48.19,50,45.96,50z
+        M4.04,2.83c-0.66,0-1.21,0.54-1.21,1.21v41.93c0,0.66,0.54,1.21,1.21,1.21h41.93
+        c0.66,0,1.21-0.54,1.21-1.21V4.04c0-0.66-0.54-1.21-1.21-1.21H4.04z"
+        />
+        <rect x="9" y="31" width="8" height="8" />
+          <rect x="22" y="31" width="8" height="8" />
+            <rect x="35" y="31" width="8" height="8" />
+              <rect x="9" y="11" width="8" height="8" />
+                <rect x="22" y="11" width="8" height="8" />
+                  <rect x="35" y="11" width="8" height="8" />
+                  </svg>
+                  <svg
+                  [ngClass]="{'active': !listView, 'active-not': listView}"
+                  (click)="listView = false"
+                    viewBox="0 0 50 50">
+                    <path
+                      d="M45.96,50H4.04C1.81,50,0,48.19,0,45.96V4.04C0,1.81,1.81,0,4.04,0h41.93C48.19,0,50,1.81,50,4.04v41.93
+                      C50,48.19,48.19,50,45.96,50z
+                      M4.04,2.83c-0.66,0-1.21,0.54-1.21,1.21v41.93c0,0.66,0.54,1.21,1.21,1.21h41.93
+                      c0.66,0,1.21-0.54,1.21-1.21V4.04c0-0.66-0.54-1.21-1.21-1.21H4.04z"
+                      />
+                      <rect x="8" y="35" width="8" height="8" />
+                        <rect x="24" y="35" width="18" height="8" />
+                          <rect x="8" y="21" width="8" height="8" />
+                            <rect x="24" y="21" width="18" height="8" />
+                              <rect x="8" y="7" width="8" height="8" />
+                                <rect x="24" y="7" width="18" height="8" />
+                                </svg>
+                              </div>
+                            </section>
+                            <section class="boards-wrap">
+                              <ng-container
+                                *ngIf="boards$ | async as boards">
 
-</section>
+                                <div class="boards-wrap__empty"
+                                  *ngIf="boards.length === 0">
+                                  <p>{{'BOARDS.NO_BOARDS' | translate}}</p>
+                                </div>
+
+                                <ng-container
+                                  *ngIf="listView">
+                                  <app-board-card
+                                    *ngFor="let board of boards"
+                                    [board]="board"></app-board-card>
+                                </ng-container>
+                                <ng-container
+                                  *ngIf="!listView">
+                                  <ul class="boards-wrap__list"
+                                    *ngFor="let board of boards">
+                                    <li>
+                                      <p>{{board.title}}</p>
+                                      <p>{{board.description}}</p>
+                                      <button>open</button>
+                                      <button>delite</button>
+                                    </li>
+                                  </ul>
+                                </ng-container>
+
+
+                              </ng-container>
+
+                            </section>

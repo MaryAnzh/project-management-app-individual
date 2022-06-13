@@ -62,12 +62,50 @@
     }
 
     &__list {
+      width: 100%;
       background: white;
 
-      li {
+
+      &__item {
         width: 100%;
         display: flex;
         border: 1px solid $mainColorDark;
+        margin-bottom: 10px;
+
+        &__title {
+          width: 320px;
+          padding: 10px;
+          display: flex;
+          border-right: 1px solid $mainColorDark;
+          align-items: center;
+        }
+
+        &__description {
+          width: 720px;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+        }
+
+        &__buttons {
+          width: 180px;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          p {
+            width: 100%;
+            text-align: right;
+          }
+
+          button {
+            padding: 10px;
+            margin-left: 10px;
+            background: $mainColorDark;
+            color: white;
+            border: none;
+          }
+        }
       }
     }
   }

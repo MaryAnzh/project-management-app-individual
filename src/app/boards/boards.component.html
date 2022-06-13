@@ -3,8 +3,8 @@
 <section class="setting__view">
   <div class="setting__view__icons">
     <svg
-    [ngClass]="{'active': listView, 'active-not': !listView}"
-    (click)="listView = true"
+      [ngClass]="{'active': listView, 'active-not': !listView}"
+      (click)="listView= true"
       viewBox="0 0 50 50">
       <path
         d="M45.96,50H4.04C1.81,50,0,48.19,0,45.96V4.04C0,1.81,1.81,0,4.04,0h41.93C48.19,0,50,1.81,50,4.04v41.93
@@ -20,8 +20,8 @@
                   <rect x="35" y="11" width="8" height="8" />
                   </svg>
                   <svg
-                  [ngClass]="{'active': !listView, 'active-not': listView}"
-                  (click)="listView = false"
+                    [ngClass]="{'active': !listView, 'active-not': listView}"
+                    (click)="listView= false"
                     viewBox="0 0 50 50">
                     <path
                       d="M45.96,50H4.04C1.81,50,0,48.19,0,45.96V4.04C0,1.81,1.81,0,4.04,0h41.93C48.19,0,50,1.81,50,4.04v41.93
@@ -57,11 +57,27 @@
                                   *ngIf="!listView">
                                   <ul class="boards-wrap__list"
                                     *ngFor="let board of boards">
-                                    <li>
-                                      <p>{{board.title}}</p>
-                                      <p>{{board.description}}</p>
-                                      <button>open</button>
-                                      <button>delite</button>
+                                    <li class="boards-wrap__list__item">
+                                      <div
+                                        class="boards-wrap__list__item__title">Title</div>
+                                      <div
+                                        class="boards-wrap__list__item__description">Description</div>
+                                      <div
+                                        class="boards-wrap__list__item__buttons">
+                                        <p>Actions</p>
+                                      </div>
+                                    </li>
+
+                                    <li class="boards-wrap__list__item">
+                                      <div
+                                        class="boards-wrap__list__item__title">{{board.title}}</div>
+                                      <div
+                                        class="boards-wrap__list__item__description">{{board.description}}</div>
+                                      <div
+                                        class="boards-wrap__list__item__buttons">
+                                        <button>open</button>
+                                        <button>delite</button>
+                                      </div>
                                     </li>
                                   </ul>
                                 </ng-container>

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
+import { IBoardCard } from 'src/app/boards/model/board.model';
 import {
   IUser,
   IUserRegistrationData,
@@ -42,6 +43,10 @@ export class RequestService {
 
   updateUser(id: string, body: IUserLoginData): Observable<IUser> {
     return this.http.put<IUser>(`/users/${id}`, body);
+  }
+
+  getBoards(): Observable<IBoardCard[]> {
+    return this.http.get<IBoardCard[]>(`/boards`);
   }
 
 }

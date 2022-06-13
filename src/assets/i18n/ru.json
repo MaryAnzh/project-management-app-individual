@@ -1,4 +1,9 @@
 {
+  "GENERAL": {
+    "ADD": "добавлен",
+        "OPEN": "открыть",
+        "DELETE": "удалить"
+  },
   "HEADER": {
     "YOUR_WAY": "Твой путь",
     "TO_SUCCESS": "к успеху",
@@ -7,9 +12,9 @@
     "REGISTRATION": "Регистрация",
     "HELLO": "Привет",
     "NAV": {
-      "welcomeE": "Приветствие",
+      "WELCOMEE": "Приветствие",
       "BOARDS": "Мои доски",
-      "CREATE_BOARD": "Создать доску",
+      "CREATE_BOARD": "Создать борд",
       "EDIT_PROFILE": "Редактировать профиль"
     }
   },
@@ -25,6 +30,7 @@
     "INSTALL_ANGULAR": "Установка Angular",
     "APP_STRUCTURE": "Создание структуры приложения",
     "INTERCEPTOR": "Добавлен Interceptor",
+    "BOARDS__CARD": "Верстка страницы бордов",
     "CARDS": {
       "BACKEND": {
         "1": "Регистрация на Heroku и инстал heroku",
@@ -37,7 +43,11 @@
         "3": "Изменяем angular.json",
         "4": "Для запуска"
       },
-      "ESLINT": "Добавлен ESLint"
+      "ESLINT": "Добавлен ESLint",
+      "BOARDS": {
+        "1": "Добавлен board-card компонент",
+        "2": "Добавление Translate библиотеки в boards module"
+      }
     }
   },
   "AUTH": {
@@ -82,9 +92,11 @@
     }
   },
   "BOARDS": {
-    "MY_BOARDS": "Мои доски",
+    "BOARDS_HEADER": "Борды",
+    "NO_BOARDS": "Бордов нет",
     "BOARD_TITLE": "Название",
     "BOARD_DESCRIPTION": "Описание",
+    "BOARD_ACTION": "Действия",
     "ERROR": "Ошибка",
     "TASK": "Задача",
     "TASKS": "Задачи",

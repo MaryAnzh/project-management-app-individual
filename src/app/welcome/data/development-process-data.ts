@@ -55,7 +55,7 @@ export const developmentProcessData = [
         text: 'MAIN.CARDS.ANGULAR.3',
         code: [
           `"options": {`,
-           `  "outputPath": "dist"`
+          `  "outputPath": "dist"`
         ],
       },
       {
@@ -127,10 +127,85 @@ export const developmentProcessData = [
         ]
       }
     ]
+  },
+
+  {
+    title: 'In process....',
+    shortDescription: '',
+    description: [
+      {
+        text: '',
+        code: [
+          '',
+        ]
+      }
+    ]
+  },
+
+  //Layout bpards page
+  {
+    title: 'MAIN.BOARDS__CARD',
+    shortDescription: '',
+    description: [
+      {
+        text: 'MAIN.CARDS.BOARDS.1',
+        code: [
+          'ng g component board-card',
+        ]
+      },
+      {
+    text: 'MAIN.CARDS.BOARDS.2',
+    code: [
+      `import { TranslateModule } from '@ngx-translate/core';`,
+    ]
+  },
+    ]
 
 
   },
 
+  {
+    title: '',
+    shortDescription: '',
+    description: [
+      {
+        text: '',
+        code: [
+          '',
+        ]
+      }
+    ]
+
+
+  },
+  {
+    title: '',
+    shortDescription: '',
+    description: [
+      {
+        text: '',
+        code: [
+          '',
+        ]
+      }
+    ]
+
+
+  },
+  {
+    title: '',
+    shortDescription: '',
+    description: [
+      {
+        text: '',
+        code: [
+          '',
+        ]
+      }
+    ]
+
+
+  },
   {
     title: '',
     shortDescription: '',

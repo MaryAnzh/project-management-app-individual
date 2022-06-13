@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output, Input, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 import { BoardsService } from '../../service/board-service/boards.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-create-board',
@@ -12,8 +13,9 @@ export class ModalCreateBoardComponent {
   public newBoardForm: FormGroup;
 
   constructor(
-    private boardsService: BoardsService
+    private boardsService: BoardsService,
   ) {
+
     this.newBoardForm = new FormGroup({
       title: new FormControl('', [
         Validators.required,
@@ -35,10 +37,13 @@ export class ModalCreateBoardComponent {
   }
 
   sunmit(): void {
-    console.log(this.newBoardForm.value.title);
-    console.log(this.newBoardForm.value.description);
-
     this.boardsService.createBoard(this.newBoardForm.value.title, this.newBoardForm.value.description);
+    this.boardsService.closeNewBoardModalOpen();
+  }
+
+  close() {
+    this.boardsService.closeNewBoardModalOpen();
+
   }
 
 }

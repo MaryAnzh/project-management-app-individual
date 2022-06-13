@@ -57,7 +57,8 @@
         | translate}}
       </button>
       <button
-        [routerLink]="['/boards']">{{'BOARDS.BUTTONS.TO_MAIN' | translate}}</button>
+      (click)="close()">
+        {{'GENERAL.CLOSE' | translate}}</button>
     </div>
 
   </div>

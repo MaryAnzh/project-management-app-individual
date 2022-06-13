@@ -2,7 +2,8 @@
   "GENERAL": {
     "ADD": "Add",
     "OPEN": "open",
-    "DELETE": "delete"
+    "DELETE": "delete",
+    "CLOSE": "close"
 
   },
   "HEADER": {

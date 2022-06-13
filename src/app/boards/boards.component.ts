@@ -12,8 +12,11 @@ import { BoardsService } from './service/board-service/boards.service';
 
 export class BoardsComponent implements OnInit {
   @Input() public boards$: Observable<IBoardCard[] | null>
+
   public listView: boolean = false;
-  public newBordFormOpen: boolean = false;
+
+  public newBordFormOpen$: Observable<boolean>;
+
   constructor(
     private boardsService: BoardsService,
     public translate: TranslateService
@@ -22,11 +25,16 @@ export class BoardsComponent implements OnInit {
     translate.addLangs(['en', 'ru']);
     translate.setDefaultLang('en');
     this.boards$ = this.boardsService.boards$;
+    this.newBordFormOpen$ = this.boardsService.isNewBoardModalOpen$;
   }
 
   ngOnInit(): void {
     this.boards$ = this.boardsService.boards$;
     this.boardsService.getBoards();
+  }
+
+  openForm() {
+    this.boardsService.showNewBoardModalOpen();
   }
 
 }

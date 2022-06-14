@@ -186,12 +186,14 @@ export const developmentProcessData = [
 
 
   },
+
+  //burger
   {
-    title: '',
+    title: 'Add burger',
     shortDescription: '',
     description: [
       {
-        text: '',
+        text: 'Add burger layout and @keyform',
         code: [
           '',
         ]

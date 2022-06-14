@@ -7,12 +7,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BurgerComponent } from './components/burger/burger.component';
 
 @NgModule({
   declarations: [
     PageNotFoundComponent,
     HeaderComponent,
     FooterComponent,
+    BurgerComponent,
   ],
   imports: [
     CommonModule,

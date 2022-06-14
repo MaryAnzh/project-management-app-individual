@@ -19,6 +19,8 @@ export class HeaderComponent {
 
   public userName: string = '';
 
+  public isBurgerOpen: boolean = false;
+
   constructor(
     private router: Router,
     private authService: AuthService,

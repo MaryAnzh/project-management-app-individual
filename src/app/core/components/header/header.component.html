@@ -27,6 +27,24 @@
               {{'HEADER.TO_SUCCESS' | translate}}
             </p>
           </div>
+          <nav class="header__section-logo-and-nav__nav">
+
+            <app-burger
+              (click)="isBurgerOpen= !isBurgerOpen"></app-burger>
+            <div class="header__section-logo-and-nav__nav__list"
+              *ngIf="isBurgerOpen">
+              <a
+                (click)="isBurgerOpen= false"
+                routerLink="/welcome">
+                {{'HEADER.NAV.WELCOME' | translate}}
+              </a>
+              <a
+                (click)="isBurgerOpen= false"
+                routerLink="/">
+                {{'HEADER.NAV.BOARDS' | translate}}
+              </a>
+            </div>
+          </nav>
         </section>
 
         <section class="header__section-auth-and-lang">
@@ -46,12 +64,13 @@
               *ngIf="isAuth$ | async">
               <p>{{'HEADER.HELLO' | translate}}, {{userName}}</p>
               <button
-              (click)="logout()">
+                (click)="logout()">
                 {{'HEADER.LOGOUT' | translate}}
               </button>
             </ng-container>
 
           </div>
+
           <div class="header__section-auth-and-lang__lang">
             <select
               #selectLang

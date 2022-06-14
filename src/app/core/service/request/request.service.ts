@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { IBoardCard } from 'src/app/boards/model/board.model';
+import {
+  IBoardCard,
+  INewBoardData,
+} from 'src/app/boards/model/board.model';
 import {
   IUser,
   IUserRegistrationData,
@@ -48,6 +51,11 @@ export class RequestService {
   getBoards(): Observable<IBoardCard[]> {
     return this.http.get<IBoardCard[]>(`/boards`);
   }
+
+  createBoard(body: INewBoardData): Observable<IBoardCard> {
+    return this.http.post<IBoardCard>('/boards', body);
+  }
+
 
 }
 

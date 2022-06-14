@@ -2,7 +2,8 @@
   "GENERAL": {
     "ADD": "добавлен",
         "OPEN": "открыть",
-        "DELETE": "удалить"
+        "DELETE": "удалить",
+        "CLOSE": "закрыть"
   },
   "HEADER": {
     "YOUR_WAY": "Твой путь",
@@ -31,6 +32,7 @@
     "APP_STRUCTURE": "Создание структуры приложения",
     "INTERCEPTOR": "Добавлен Interceptor",
     "BOARDS__CARD": "Верстка страницы бордов",
+    "BOARD_CREATE-FORM": "Новый борд -- форма создания",
     "CARDS": {
       "BACKEND": {
         "1": "Регистрация на Heroku и инстал heroku",

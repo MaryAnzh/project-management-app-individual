@@ -164,14 +164,22 @@ export const developmentProcessData = [
 
   },
 
+  //board create form
   {
-    title: '',
+    title: 'MAIN.BOARD_CREATE-FORM',
     shortDescription: '',
     description: [
       {
-        text: '',
+        text: 'Add modal-create-board.component',
         code: [
           '',
+        ]
+      },
+      {
+        text: 'Add FormsModule, ReactiveFormsModule',
+        code: [
+          `import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+`,
         ]
       }
     ]

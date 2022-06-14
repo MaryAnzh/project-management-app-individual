@@ -12,6 +12,7 @@
       width: 100%;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
 
       &__icons {
         width: 70px;
@@ -28,16 +29,29 @@
         }
 
         .active-not {
-          width: 20px;
-          height: 20px;
-          fill: $mainColor;
+          width: 30px;
+          height: 30px;
+          fill: $mainColorLight;
           transition: .3s;
           cursor: pointer;
 
           &:hover {
             fill: $mainColorDark;
-            transform: scale(1.2, 1.2);
           }
+        }
+      }
+
+      &__button {
+
+        margin-left: 10px;
+        padding: 11px;
+        background: $additionalColor;
+        color: white;
+        border: none;
+        transition: .3s;
+
+        &:hover {
+          background: $additionalDark;
         }
       }
     }
@@ -49,6 +63,7 @@
     padding: 20px 10px;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
     background: $mainColorLight2;
@@ -70,7 +85,7 @@
 
         &:hover {
           background: $mainColorDark;
-          transform: scale(1.15);
+          transform: scale(1.15s);
         }
 
       }
@@ -140,6 +155,12 @@
             }
           }
         }
+      }
+
+      &__item:nth-child(1) {
+        background: $mainColorDark;
+        color: white;
+        border-right: 1px solid white;
       }
     }
   }

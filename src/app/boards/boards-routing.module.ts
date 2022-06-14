@@ -9,7 +9,7 @@ const routes: Routes = [
     component: BoardsComponent
   },
   {
-    path: 'board/:id',
+    path: ':id',
     component: BoardComponent
   }
 ];
@@ -18,4 +18,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class BoardsRoutingModule { }

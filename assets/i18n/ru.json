@@ -13,8 +13,8 @@
     "REGISTRATION": "Регистрация",
     "HELLO": "Привет",
     "NAV": {
-      "WELCOMEE": "Приветствие",
-      "BOARDS": "Мои доски",
+      "WELCOME": "Инфо",
+      "BOARDS": "Борды",
       "CREATE_BOARD": "Создать борд",
       "EDIT_PROFILE": "Редактировать профиль"
     }

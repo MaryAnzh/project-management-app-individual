@@ -15,7 +15,7 @@
     "HELLO": "Hello",
     "NAV": {
       "WELCOME": "welcome",
-      "BOARDS": "My Boards",
+      "BOARDS": "Boards",
       "CREATE_BOARD": "Create new board",
       "EDIT_PROFILE": "Edit profile"
     }

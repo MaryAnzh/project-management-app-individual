@@ -1,0 +1,14 @@
+<div class="confirmation-modal">
+  <div class="confirmation-modal__text">
+    <p>{{'MODAL.CONFIRM_ACTION' | translate}}</p>
+  </div>
+
+  <div class="confirmation-modal__buttons-wrap">
+    <button
+      data-type="confirm"
+      (click)="confirmClick()">{{'MODAL.CONFIRM' | translate}}</button>
+    <button
+      data-type="cancel"
+      (click)="cancelClick()">{{'MODAL.CANCEL' | translate}}</button>
+  </div>
+</div>

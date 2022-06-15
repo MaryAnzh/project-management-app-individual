@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { IBoardCard, INewBoardData } from '../../model/board.model';
 import { RequestService } from 'src/app/core/service/request/request.service';
 import { Router } from '@angular/router';
-import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
+import { ConfirmModalService } from 'src/app/core/service/confirm-modal/confirm-modal.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,7 @@ export class BoardsService {
   constructor(
     private requestService: RequestService,
     private router: Router,
+    private confirmModalService: ConfirmModalService
   ) {
     this.getBoards();
   }
@@ -29,7 +30,6 @@ export class BoardsService {
 
   closeNewBoardModalOpen() {
     this._isNewBoardModalOpen$$.next(false);
-
   }
 
   getBoards(): void {
@@ -49,5 +49,23 @@ export class BoardsService {
       next: (value) => this.router.navigateByUrl(`boards/${value.id}`),
       error: (error) => console.error(error.error),
     });
+  }
+
+  deleteBoard(id: string): void {
+    console.log('Delete start');
+    this.requestService.deleteBoard(id).subscribe({
+      next: (response: any) => {
+        this.getBoards();
+        console.log('Board Delete');
+      },
+      error: (error) => console.error(error.message),
+    });
+  }
+
+  showConfirmationModalBoardItem(id: string): void {
+    const res = this.confirmModalService.openConfirmationModal().then(() => {
+      this.deleteBoard(id);
+    })
+      .catch(() => { })
   }
 }

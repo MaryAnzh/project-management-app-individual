@@ -1,0 +1,62 @@
+@import '../../../../vareable';
+
+:host {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+
+  .confirmation-modal {
+    width: 320px;
+    height: 200px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px dashed $mainColorDark;
+    border-radius: 10px;
+
+    p {
+      font-size: 34px;
+      text-align: center;
+    }
+
+    &__buttons-wrap {
+      width: 80%;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: 110px;
+        height: 40px;
+        color: #ffffff;
+        border: none;
+        transition: .3s;
+      }
+
+      button:nth-child(1) {
+        background: $mainColor;
+
+        &:hover {
+          background: $mainColorDark;
+        }
+      }
+
+      button:nth-child(2) {
+        background: $contrastColor;
+
+        &:hover {
+          background: $contrastColorDark;
+        }
+      }
+
+    }
+  }
+}

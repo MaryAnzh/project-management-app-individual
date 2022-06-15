@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BurgerComponent } from './components/burger/burger.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BurgerComponent } from './components/burger/burger.component';
     HeaderComponent,
     FooterComponent,
     BurgerComponent,
+    ConfirmModalComponent,
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { BurgerComponent } from './components/burger/burger.component';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmModalComponent,
   ],
 })
 

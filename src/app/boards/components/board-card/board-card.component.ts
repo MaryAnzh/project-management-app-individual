@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IBoardCard } from '../../model/board.model';
 import { Router } from '@angular/router';
+import { BoardsService } from '../../service/board-service/boards.service';
 
 @Component({
   selector: 'app-board-card',
@@ -12,7 +13,8 @@ export class BoardCardComponent {
   @Input() public board: IBoardCard | undefined = undefined;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private boardsService: BoardsService
   ) {
 
   }
@@ -24,8 +26,8 @@ export class BoardCardComponent {
     }
   }
 
-  close() {
-    alert('Работает');
+  delete(id: string) {
+    this.boardsService.showConfirmationModalBoardItem(id);
   }
 
 }

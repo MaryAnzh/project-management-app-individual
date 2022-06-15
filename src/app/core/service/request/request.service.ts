@@ -56,6 +56,10 @@ export class RequestService {
     return this.http.post<IBoardCard>('/boards', body);
   }
 
+  deleteBoard(id: string): Observable<any> {
+    return this.http.delete(`/boards/${id}`);
+  }
+
 
 }
 

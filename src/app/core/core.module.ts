@@ -26,7 +26,8 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmModalComponent,
   ],
 })
 

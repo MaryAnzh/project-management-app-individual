@@ -38,7 +38,7 @@ export class BoardsComponent implements OnInit {
   }
 
   deleteBoard(id: string) {
-    this.boardsService.deleteBoard(id);
+    this.boardsService.showConfirmationModalBoardItem(id);
   }
 
 }

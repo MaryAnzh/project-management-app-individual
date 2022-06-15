@@ -36,22 +36,24 @@
       button {
         width: 110px;
         height: 40px;
+        color: #ffffff;
+        border: none;
         transition: .3s;
       }
 
       button:nth-child(1) {
-        background: #3B9AC8;
+        background: $mainColor;
 
         &:hover {
-          background: #83c8eb;
+          background: $mainColorDark;
         }
       }
 
       button:nth-child(2) {
-        background: #E67D03;
+        background: $contrastColor;
 
         &:hover {
-          background: #e09c4e;
+          background: $contrastColorDark;
         }
       }
 

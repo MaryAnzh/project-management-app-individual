@@ -27,7 +27,7 @@ export class BoardCardComponent {
   }
 
   delete(id: string) {
-    this.boardsService.deleteBoard(id);
+    this.boardsService.showConfirmationModalBoardItem(id);
   }
 
 }

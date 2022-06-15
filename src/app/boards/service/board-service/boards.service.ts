@@ -29,7 +29,6 @@ export class BoardsService {
 
   closeNewBoardModalOpen() {
     this._isNewBoardModalOpen$$.next(false);
-
   }
 
   getBoards(): void {
@@ -50,4 +49,22 @@ export class BoardsService {
       error: (error) => console.error(error.error),
     });
   }
+
+  deleteBoard(id: string): void {
+    console.log('Delete start');
+    this.requestService.deleteBoard(id).subscribe({
+      next: (response: any) => {
+        this.getBoards();
+        console.log('Board Delete');
+      },
+      error: (error) => console.error(error.message),
+    });
+  }
+
+  // showConfirmationModalBoardItem(id: string): void {
+  //   const res = this.coreDataService.openConfirmationModal().then(() => {
+  //     this.deleteBoardItem(id);
+  //   })
+  //     .catch(() => { })
+  // }
 }

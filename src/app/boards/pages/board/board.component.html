@@ -6,7 +6,18 @@
         class="board__header__title__form"
         [formGroup]="boardTitleForm">
         <input type="text"
-          formControlName="title">
+          formControlName="title"
+          (focus)="ShowBoardTitleButtpns = true"
+          (blur)="hideBoardTitleButtons()"
+          >
+        <div
+          [ngClass]="{'hidden': !ShowBoardTitleButtpns,
+          'show': ShowBoardTitleButtpns,
+          'board__header__title__form__buttons buttons': true}">
+          <button></button>
+          <button></button>
+        </div>
+
       </form>
     </div>
   </section>

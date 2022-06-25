@@ -12,16 +12,20 @@ export class BoardService {
 
   public board$: Observable<IBoardData> = this._board$$.asObservable();
 
+  public currentBoard: IBoardData | null = null;
+
   constructor(
     private _requestService: RequestService,
-  ) { }
+  ) {
+    this.board$.subscribe({
+      next: (value) => this.currentBoard = value
+    });
+   }
 
   getBoard(id: string) {
     this._requestService.getBoard(id).subscribe({
       next: (resp) => {
-        this._board$$.next(resp);
-        console.log('Запрос выполнен');
-        console.log(resp);
+        this._board$$.next(resp)
       },
       error: (error) => console.error(error),
     });

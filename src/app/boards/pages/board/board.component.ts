@@ -24,6 +24,8 @@ export class BoardComponent implements OnInit {
     ]),
   });
 
+  public ShowBoardTitleButtpns: boolean = false;
+
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _boardService: BoardService
@@ -35,6 +37,7 @@ export class BoardComponent implements OnInit {
     }
 
     this.board$ = this._boardService.board$;
+
   }
 
   get titleControlName(): AbstractControl {
@@ -44,9 +47,21 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
     if (this.board$) {
       this.board$.subscribe({
-        next: (value) => this.boardTitleForm.setValue({ title: value.title}),
+        next: (value) => this.boardTitleForm.setValue({ title: value.title }),
       });
     }
   }
 
+  updateBoardTitle() {
+    if (this._boardService.currentBoard) {
+      this.boardTitleForm.setValue({ title: this._boardService.currentBoard.title });
+    }
+  }
+
+  hideBoardTitleButtons() {
+    setTimeout(() => {
+      this.ShowBoardTitleButtpns = false;
+      this.updateBoardTitle();
+    }, 100);
+  }
 }

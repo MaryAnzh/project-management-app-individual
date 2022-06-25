@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { IBoardCard } from './model/board.model';
-import { BoardsService } from './service/board-service/boards.service';
+import { BoardsService } from './service/boards/boards.service';
 
 @Component({
   selector: 'app-boards',

@@ -63,6 +63,7 @@ export class BoardsService {
   }
 
   showConfirmationModalBoardItem(id: string): void {
+
     const res = this.confirmModalService.openConfirmationModal().then(() => {
       this.deleteBoard(id);
     })

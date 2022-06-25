@@ -154,11 +154,11 @@ export const developmentProcessData = [
         ]
       },
       {
-    text: 'MAIN.CARDS.BOARDS.2',
-    code: [
-      `import { TranslateModule } from '@ngx-translate/core';`,
-    ]
-  },
+        text: 'MAIN.CARDS.BOARDS.2',
+        code: [
+          `import { TranslateModule } from '@ngx-translate/core';`,
+        ]
+      },
     ]
 
 
@@ -202,16 +202,40 @@ export const developmentProcessData = [
 
 
   },
+
+  //board page
   {
-    title: '',
+    title: 'Add Board Page',
     shortDescription: '',
     description: [
       {
-        text: '',
+        text: 'add Board component',
         code: [
-          '',
+          'ng g component board',
         ]
-      }
+      },
+      {
+        text: 'add ActivatedRoute for board id extraction',
+        code: [
+          `import { ActivatedRoute } from '@angular/router';`,
+          `
+  public boardId: string = '';
+
+  constructor(
+    private _activatedRoute: ActivatedRoute,
+    private _boardService: BoardService
+  ) {
+
+    const id = this._activatedRoute.snapshot.paramMap.get('id');
+    if (id) {
+      this.boardId = id;
+      this._boardService.getBoard(id);
+    }
+  }
+          `,
+          ``,
+        ]
+      },
     ]
 
 

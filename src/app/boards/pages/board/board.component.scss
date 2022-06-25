@@ -17,7 +17,31 @@
       background: $mainColor;
 
       &__title {
-        color: #ffffff;
+        &__form {
+
+          width: 360px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+
+
+          input {
+            height: 40px;
+            font-size: 32px;
+            padding-left: 10px;
+            background: $mainColor;
+            color: #ffffff;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+
+            &:focus {
+              background: #ffffff;
+              color: $mainColor;
+            }
+          }
+        }
       }
     }
   }

@@ -1,7 +1,13 @@
 <section class="board"
-*ngIf="board$ | async as board">
+  *ngIf="board$ | async as board">
   <section class="board__header">
     <div class="board__header__title">
+      <form
+      class="board__header__title__form"
+      [formGroup]="boardTitleForm">
+        <input type="text"
+        formControlName="title">
+      </form>
       {{board.title}}
     </div>
   </section>

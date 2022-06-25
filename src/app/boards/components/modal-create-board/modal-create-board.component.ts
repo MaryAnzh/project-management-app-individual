@@ -1,7 +1,6 @@
 import { Component, Output, Input, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 import { BoardsService } from '../../service/boards/boards.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-create-board',

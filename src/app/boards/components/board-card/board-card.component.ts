@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IBoardCard } from '../../model/board.model';
 import { Router } from '@angular/router';
-import { BoardsService } from '../../service/board-service/boards.service';
+import { BoardsService } from '../../service/boards/boards.service';
 
 @Component({
   selector: 'app-board-card',

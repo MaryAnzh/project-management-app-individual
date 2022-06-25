@@ -1,1 +1,9 @@
-<p>board works!</p>
+<section class="board"
+*ngIf="board$ | async as board">
+  <section class="board__header">
+    <div class="board__header__title">
+      {{board.title}}
+    </div>
+  </section>
+
+</section>

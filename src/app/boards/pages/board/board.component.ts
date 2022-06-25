@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BoardService } from '../../service/board/board.service';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { IBoardCard } from '../../model/board.model';
-import { BoardsService } from '../../service/board-service/boards.service';
+import { IBoardData } from '../../model/board.model';
+
 
 @Component({
   selector: 'app-board',
@@ -9,15 +11,23 @@ import { BoardsService } from '../../service/board-service/boards.service';
   styleUrls: ['./board.component.scss']
 })
 
-export class BoardComponent implements OnInit {
+export class BoardComponent {
+
+  public board$: Observable<IBoardData> | null = null;
+
+  public boardId: string = '';
 
   constructor(
-    private boardsService: BoardsService
+    private _activatedRoute: ActivatedRoute,
+    private _boardService: BoardService
   ) {
-   }
+    this.board$ = this._boardService.board$;
 
-  ngOnInit(): void {
-
+    const id = this._activatedRoute.snapshot.paramMap.get('id');
+    if (id) {
+      this.boardId = id;
+      this._boardService.getBoard(id);
+    }
   }
 
 }

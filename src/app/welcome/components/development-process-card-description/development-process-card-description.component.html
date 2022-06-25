@@ -24,7 +24,7 @@
             <p>{{i + 1}}. {{li.text | translate}}</p>
             <ul
               *ngFor="let code of li.code">
-              <li>{{code}}</li>
+              <li><pre><code>{{code}}</code></pre></li>
             </ul>
           </li>
         </ul>

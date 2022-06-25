@@ -30,6 +30,7 @@
           <nav class="header__section-logo-and-nav__nav">
 
             <app-burger
+              *ngIf="isAuth$ | async"
               (click)="isBurgerOpen= !isBurgerOpen"></app-burger>
             <div class="header__section-logo-and-nav__nav__list"
               *ngIf="isBurgerOpen">

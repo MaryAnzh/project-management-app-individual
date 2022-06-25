@@ -31,11 +31,11 @@ export class HeaderComponent {
     this.user$ = this.authService.user$.subscribe({
       next: (value) => value ? this.userName = value.name : '',
       complete: () => this.user$.unsubscribe,
-     })
+    })
 
     translate.addLangs(['en', 'ru']);
     translate.setDefaultLang('en');
-   }
+  }
 
   translateLanguageTo(lang: string): void {
     this.translate.use(lang);
@@ -44,6 +44,12 @@ export class HeaderComponent {
   logout() {
     this.router.navigateByUrl('/welcome');
     this.authService.logout();
+  }
+
+  ngOnDestroy(): void {
+    if (this.user$) {
+      this.user$.unsubscribe();
+    }
   }
 
 }

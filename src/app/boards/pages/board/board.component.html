@@ -15,10 +15,12 @@
           <div
             [ngClass]="{'hidden': !ShowBoardTitleButtpns,
             'show': ShowBoardTitleButtpns,
-            'blocked': boardTitleForm.invalid,
-            'visible': !boardTitleForm.invalid,
             'board__header__title__form__field__buttons buttons': true}">
-            <button>
+            <button
+              [ngClass]="{
+              'blocked': boardTitleForm.invalid,
+              'visible': !boardTitleForm.invalid
+              }">
               <svg
                 viewBox="0 0 27 26">
                 <path
@@ -35,8 +37,7 @@
             </button>
           </div>
         </div>
-        <div
-          class="board__header__title__form__field-error"
+        <div class="board__header__title__form__field-error"
           @showError
           *ngIf="titleControlName.invalid
           && (titleControlName.dirty

@@ -241,7 +241,7 @@ export const developmentProcessData = [
     //animstion
   },
   {
-    title: 'Animation',
+    title: 'Add Animation',
     shortDescription: '',
     description: [
       {
@@ -265,22 +265,37 @@ export const developmentProcessData = [
       {
         text: `Add "animations" in @Component`,
         code: [
-          `@Component({
-            ...
-      animations: [
-      trigger('flyInOut', [
-        state('in', style({ transform: 'translateX(0)'})),
-        transition('void => *', [
-          style({ transform: 'translateX(-100%)' }),
-          animate(500),
-        ]),
-        transition('* => void', [
-          animate(500, style({ transform: 'translateX(100%)' })),
-        ])
+          `
+  @Component({
+  selector: 'app-board',
+  templateUrl: './board.component.html',
+  styleUrls: ['./board.component.scss'],
+  animations: [
+    trigger('showError', [
+      state('in', style({ transform: 'translateY(35px)' })),
+      transition('void => *', [
+        style({ transform: 'translateY(0)' }),
+        animate(300),
       ]),
-    })`
+      transition('* => void', [
+        animate(300, style({ transform: 'translateY(0)' })),
+      ])
+    ]),
+  ],
+})`
         ]
       },
+      {
+        text: `Add trigger in component`,
+        code: [
+          `
+          <div class="board__header__title__form__field-error"
+             @showError
+             *ngIf="titleControlName.invalid"
+             ...
+             >`
+        ],
+      }
     ]
   },
 ]

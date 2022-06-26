@@ -238,21 +238,49 @@ export const developmentProcessData = [
       },
     ]
 
-
+    //animstion
   },
   {
-    title: '',
+    title: 'Animation',
     shortDescription: '',
     description: [
       {
-        text: '',
+        text: 'Add BrowserAnimationsModule',
         code: [
-          '',
+          `import { BrowserAnimationsModule } from '@angular/platform-browser/animations';`
         ]
-      }
+      },
+      {
+        text: 'Import in component',
+        code: [
+          `import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';`
+        ]
+      },
+      {
+        text: `Add "animations" in @Component`,
+        code: [
+          `@Component({
+            ...
+      animations: [
+      trigger('flyInOut', [
+        state('in', style({ transform: 'translateX(0)'})),
+        transition('void => *', [
+          style({ transform: 'translateX(-100%)' }),
+          animate(500),
+        ]),
+        transition('* => void', [
+          animate(500, style({ transform: 'translateX(100%)' })),
+        ])
+      ]),
+    })`
+        ]
+      },
     ]
-
-
   },
-
 ]

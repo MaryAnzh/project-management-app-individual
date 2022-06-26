@@ -4,11 +4,30 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IBoardData } from '../../model/board.model';
 import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.scss']
+  styleUrls: ['./board.component.scss'],
+  animations: [
+    trigger('showError', [
+      state('in', style({ transform: 'translateY(35px)' })),
+      transition('void => *', [
+        style({ transform: 'translateY(0)' }),
+        animate(300),
+      ]),
+      transition('* => void', [
+        animate(300, style({ transform: 'translateY(0)' })),
+      ])
+    ]),
+  ],
 })
 
 export class BoardComponent implements OnInit {
@@ -19,6 +38,7 @@ export class BoardComponent implements OnInit {
 
   public boardTitleForm: FormGroup = new FormGroup({
     title: new FormControl('', [
+      Validators.required,
       Validators.maxLength(30),
       Validators.minLength(3),
     ]),

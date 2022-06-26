@@ -19,64 +19,90 @@
       background: $mainColor;
 
       &__title {
-        &__form {
+        padding-left: 10px;
 
+        &__form {
           width: 360px;
           height: 60px;
-          display: flex;
-          align-items: center;
-          padding-left: 20px;
 
-          &__buttons {
-            width: 70px;
-            transform: translate(-70px, 0);
+          &__field-error {
+            position: absolute;
+            height: 30px;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            transform: translateY(35px);
+            background: #ffffff;
+            border: 1px solid $mainColor;
+            border-radius: 6px;
+
+            &__text {
+               color: $contrastColorLight;
+            }
+          }
+
+          &__field {
+            width: 360px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+
+            &__buttons {
+              width: 70px;
+              transform: translate(-70px, 0);
+              z-index: 2;
 
 
-            button {
-              width: 30px;
-              height: 30px;
-              background: #ffffff;
-              border: 2px solid $mainColor;
-              border-radius: 50%;
+              button {
+                width: 30px;
+                height: 30px;
+                background: #ffffff;
+                border: 2px solid $mainColor;
+                border-radius: 50%;
+                outline: none;
+                transition: .3s;
+
+                &:hover {
+                  background: $mainColor;
+                }
+
+                &:hover svg {
+                  stroke: #ffffff;
+                }
+
+                svg {
+                  width: 15px;
+                  height: 15px;
+                  fill: none;
+                  stroke: $mainColor;
+                  stroke-width: 4;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 10;
+                }
+              }
+            }
+
+            input {
+              height: 40px;
+              font-size: 32px;
+              padding-left: 10px;
+              background: $mainColor;
+              color: #ffffff;
+              border: none;
               outline: none;
-              transition: .3s;
+              border-radius: 4px;
+              z-index: 1;
 
-              &:hover {
-                background: $mainColor;
-              }
-
-              &:hover svg {
-                stroke: #ffffff;
-              }
-
-              svg {
-                width: 15px;
-                height: 15px;
-                fill: none;
-                stroke: $mainColor;
-                stroke-width: 4;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-                stroke-miterlimit: 10;
+              &:focus {
+                background: #ffffff;
+                color: $mainColor;
               }
             }
           }
 
-          input {
-            height: 40px;
-            font-size: 32px;
-            padding-left: 10px;
-            background: $mainColor;
-            color: #ffffff;
-            border: none;
-            outline: none;
-            border-radius: 4px;
 
-            &:focus {
-              background: #ffffff;
-              color: $mainColor;
-            }
-          }
         }
       }
     }

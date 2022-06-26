@@ -3,8 +3,8 @@
     "ADD": "Add",
     "OPEN": "open",
     "DELETE": "delete",
-    "CLOSE": "close"
-
+    "CLOSE": "close",
+    "SYMBOLS": "symbols"
   },
   "HEADER": {
     "YOUR_WAY": "Your Way",
@@ -122,6 +122,7 @@
     "VALIDATE": {
       "TITLE_REQUIRED": "Please enter a Title",
       "DISCRIPTION_REQUIRED": "Please enter a Description",
+      "MINLENGTH": "length should not less",
       "MAXLENGTH": "length should not exceed",
       "SYMBOLS": "symbols"
     },

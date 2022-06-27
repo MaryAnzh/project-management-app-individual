@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { RequestService } from 'src/app/core/service/request/request.service';
 import { IBoardData, IUpdateBoardData } from '../../model/board.model';
+import { ConfirmModalService } from 'src/app/core/service/confirm-modal/confirm-modal.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,8 @@ export class BoardService {
 
   constructor(
     private _requestService: RequestService,
+    private _confirmModalService: ConfirmModalService,
+    private _router: Router
   ) {
     this.board$.subscribe({
       next: (value) => this.currentBoard = value

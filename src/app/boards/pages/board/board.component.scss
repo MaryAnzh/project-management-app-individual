@@ -15,6 +15,9 @@
     &__header {
       width: 100%;
       height: 60px;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 10px;
       background: $mainColor;
 
       &__title {
@@ -102,6 +105,27 @@
           }
 
 
+        }
+      }
+
+      &__controls {
+        width: 360px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__button {
+          padding: 5px 10px;
+          border: 1px dashed #ffffff;
+          border-radius: 6px;
+          background-color: $mainColor;
+          color: #ffffff;
+          transition: .3s;
+
+          &:hover {
+            background: $additionalDark;
+          }
         }
       }
     }

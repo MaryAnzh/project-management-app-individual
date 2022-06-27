@@ -63,7 +63,19 @@
         </div>
       </form>
     </div>
+    <div class="board__header__controls">
+      <button class="board__header__controls__button">
+        {{'BOARDS.BUTTONS.NEW_COLUMN' | translate}}
+      </button>
+      <button class="board__header__controls__button">
+        {{'GENERAL.CHANGE' | translate}}
+      </button>
+      <button class="board__header__controls__button"
+      (click)="deleteBoard()">
+        {{'GENERAL.DELETE' | translate}}
+      </button>
 
+    </div>
   </section>
   <div class="board__description">
     {{board.description}}

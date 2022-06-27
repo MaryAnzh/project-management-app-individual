@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BoardService } from '../../service/board/board.service';
+import { BoardsService } from '../../service/boards/boards.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IBoardData } from '../../model/board.model';
 import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import {
   trigger,
   state,
@@ -48,7 +50,9 @@ export class BoardComponent implements OnInit {
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _boardService: BoardService
+    private _boardService: BoardService,
+    private _boardsService: BoardsService,
+    private _router: Router
   ) {
     const id = this._activatedRoute.snapshot.paramMap.get('id');
     if (id) {
@@ -87,8 +91,13 @@ export class BoardComponent implements OnInit {
 
   updateBoardTitle() {
     const title = this.boardTitleForm.value.title;
-    const description = this._boardService.currentBoard ? this._boardService.currentBoard.description: '';
-    this.boardTitleForm.setValue({ title: title});
+    const description = this._boardService.currentBoard ? this._boardService.currentBoard.description : '';
+    this.boardTitleForm.setValue({ title: title });
     this._boardService.updateBoard(title, description);
+  }
+
+  deleteBoard() {
+    this._boardsService.showConfirmationModalBoardItem(this.boardId);
+
   }
 }

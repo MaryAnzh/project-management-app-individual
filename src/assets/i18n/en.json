@@ -4,7 +4,8 @@
     "OPEN": "open",
     "DELETE": "delete",
     "CLOSE": "close",
-    "SYMBOLS": "symbols"
+    "SYMBOLS": "symbols",
+    "CHANGE": "change"
   },
   "HEADER": {
     "YOUR_WAY": "Your Way",

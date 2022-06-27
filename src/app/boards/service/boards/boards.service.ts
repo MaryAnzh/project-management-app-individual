@@ -52,11 +52,11 @@ export class BoardsService {
   }
 
   deleteBoard(id: string): void {
-    console.log('Delete start');
+
     this.requestService.deleteBoard(id).subscribe({
       next: (response: any) => {
         this.getBoards();
-        console.log('Board Delete');
+        this.router.navigateByUrl('');
       },
       error: (error) => console.error(error.message),
     });

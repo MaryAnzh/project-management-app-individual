@@ -60,6 +60,7 @@
           flex-direction: column;
           justify-content: space-around;
           background: $mainColorDark;
+          z-index: 3;
 
           a {
             height: 30px;

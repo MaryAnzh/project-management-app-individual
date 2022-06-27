@@ -16,6 +16,11 @@ export interface IBoardData {
   columns: IColumnData[],
 }
 
+export interface IUpdateBoardData {
+  title: string,
+  description: string
+}
+
 export interface IColumnData {
   id: string,
   title: string,

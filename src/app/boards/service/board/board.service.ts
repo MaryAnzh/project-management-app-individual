@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { RequestService } from 'src/app/core/service/request/request.service';
-import { IBoardData } from '../../model/board.model';
+import { IBoardData, IUpdateBoardData } from '../../model/board.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class BoardService {
     this.board$.subscribe({
       next: (value) => this.currentBoard = value
     });
-   }
+  }
 
   getBoard(id: string) {
     this._requestService.getBoard(id).subscribe({
@@ -29,5 +29,24 @@ export class BoardService {
       },
       error: (error) => console.error(error),
     });
+  }
+
+  updateBoard(title: string, description: string) {
+    const body: IUpdateBoardData = {
+      title: title,
+      description: description,
+    }
+    if (this.currentBoard) {
+      this._requestService.updateBoard(this.currentBoard.id, body).subscribe({
+        next: (value) => {
+          if (this.currentBoard) {
+            this.currentBoard.title = value.title;
+            this.currentBoard.description = value.description;
+            this._board$$.next(this.currentBoard);
+          }
+        }
+      });
+
+    }
   }
 }

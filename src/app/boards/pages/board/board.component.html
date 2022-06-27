@@ -20,7 +20,8 @@
               [ngClass]="{
               'blocked': boardTitleForm.invalid,
               'visible': !boardTitleForm.invalid
-              }">
+              }"
+              (click)="updateBoardTitle()">
               <svg
                 viewBox="0 0 27 26">
                 <path

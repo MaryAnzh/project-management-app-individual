@@ -72,7 +72,7 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  updateBoardTitle() {
+  reverseBoardTitle() {
     if (this._boardService.currentBoard) {
       this.boardTitleForm.setValue({ title: this._boardService.currentBoard.title });
     }
@@ -81,7 +81,14 @@ export class BoardComponent implements OnInit {
   hideBoardTitleButtons() {
     setTimeout(() => {
       this.ShowBoardTitleButtpns = false;
-      this.updateBoardTitle();
+      this.reverseBoardTitle();
     }, 100);
+  }
+
+  updateBoardTitle() {
+    const title = this.boardTitleForm.value.title;
+    const description = this._boardService.currentBoard ? this._boardService.currentBoard.description: '';
+    this.boardTitleForm.setValue({ title: title});
+    this._boardService.updateBoard(title, description);
   }
 }

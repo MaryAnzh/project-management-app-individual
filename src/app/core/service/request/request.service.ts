@@ -4,7 +4,8 @@ import { Observable, throwError } from 'rxjs';
 import {
   IBoardCard,
   INewBoardData,
-  IBoardData
+  IBoardData,
+  IUpdateBoardData
 } from 'src/app/boards/model/board.model';
 import {
   IUser,
@@ -59,6 +60,10 @@ export class RequestService {
 
   createBoard(body: INewBoardData): Observable<IBoardCard> {
     return this.http.post<IBoardCard>('/boards', body);
+  }
+
+  updateBoard(id: string, body: IUpdateBoardData): Observable<IBoardCard> {
+    return this.http.put<IBoardCard>(`/boards/${id}`, body);
   }
 
   deleteBoard(id: string): Observable<any> {

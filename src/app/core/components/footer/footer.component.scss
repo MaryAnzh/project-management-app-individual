@@ -16,6 +16,7 @@
 
     @media (max-width: 720px) {
       flex-wrap: wrap;
+      padding: 0;
     }
 
     &__mary {
@@ -24,10 +25,18 @@
         display: flex;
         align-items: center;
 
+        @media (max-width: 720px) {
+          height: 20px;
+        }
+
         svg {
           width: 50px;
           fill: $mainColor;
           transition: .3s;
+
+          @media (max-width: 720px) {
+            display: none;
+          }
 
           &:hover {
             fill: $mainColorDark;
@@ -46,6 +55,7 @@
 
     &__rs-school-logo {
       margin-right: 1rem;
+
       a {
         svg {
           width: 138.41px;
@@ -59,7 +69,7 @@
       }
 
       @media (max-width: 720px) {
-        transform: scale(0.6);
+        transform: scale(0.4);
       }
     }
   }

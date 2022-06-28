@@ -3,7 +3,10 @@ import { BoardService } from '../../service/board/board.service';
 import { BoardsService } from '../../service/boards/boards.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { IBoardData } from '../../model/board.model';
+import {
+  IBoardData,
+  IBoardCard
+} from '../../model/board.model';
 import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {
@@ -46,7 +49,13 @@ export class BoardComponent implements OnInit {
     ]),
   });
 
+  @Input() public boardInfo: IBoardCard;
+  @Input() updateBoardModalButtonName = 'GENERAL.CHANGE';
+  @Input() public modalAction: string = 'update';
+
   public ShowBoardTitleButtpns: boolean = false;
+
+  public isUpdateBoardModalOpen$: Observable<boolean>;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -61,6 +70,13 @@ export class BoardComponent implements OnInit {
     }
 
     this.board$ = this._boardService.board$;
+    this.boardInfo = {
+      id: '',
+      title: '',
+      description: ''
+    };
+
+    this.isUpdateBoardModalOpen$ = this._boardService.isUpdateBoardModalOpen$;
 
   }
 
@@ -71,8 +87,12 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
     if (this.board$) {
       this.board$.subscribe({
-        next: (value) => this.boardTitleForm.setValue({ title: value.title }),
+        next: (value) => {
+          this.boardTitleForm.setValue({ title: value.title }),
+            this.boardInfo = value;
+        }
       });
+
     }
   }
 
@@ -98,6 +118,13 @@ export class BoardComponent implements OnInit {
 
   deleteBoard() {
     this._boardsService.showConfirmationModalBoardItem(this.boardId);
+  }
 
+  showUpdateBoardModal() {
+    this._boardService.showUpdateBoardModal();
+  }
+
+  @Input() closeUpdateBoardModal() {
+    this._boardService.closeUpdateBoardModal();
   }
 }

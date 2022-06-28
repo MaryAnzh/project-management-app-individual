@@ -53,8 +53,7 @@
       <button
         type="submit"
         [ngClass]="{'blocked': newBoardForm.invalid}">
-        {{'BOARDS.BUTTONS.CREATE'
-        | translate}}
+        {{buttonName | translate}}
       </button>
       <button
       (click)="close()">

@@ -1,3 +1,11 @@
+<app-modal-create-board
+  *ngIf="isUpdateBoardModalOpen$ | async"
+  [boardInfo]="boardInfo"
+  [buttonName]="updateBoardModalButtonName"
+  [modalAction]="modalAction"
+  [closeMpdal]="closeUpdateBoardModal.bind(this)">
+
+</app-modal-create-board>
 <section class="board"
   *ngIf="board$ | async as board">
   <section class="board__header">
@@ -67,7 +75,8 @@
       <button class="board__header__controls__button">
         {{'BOARDS.BUTTONS.NEW_COLUMN' | translate}}
       </button>
-      <button class="board__header__controls__button">
+      <button class="board__header__controls__button"
+      (click)="showUpdateBoardModal()">
         {{'GENERAL.CHANGE' | translate}}
       </button>
       <button class="board__header__controls__button"

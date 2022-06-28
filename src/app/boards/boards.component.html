@@ -1,6 +1,9 @@
 
 <app-modal-create-board
-  *ngIf="newBordFormOpen$ | async">
+  *ngIf="newBordFormOpen$ | async"
+  [buttonName]="createBoardModalButtonName"
+   [modalAction]="modalAction"
+  [closeMpdal]="closeCreateBoardModal.bind(this)">
 
 </app-modal-create-board>
 <h2>{{'BOARDS.BOARDS_HEADER' | translate}}</h2>

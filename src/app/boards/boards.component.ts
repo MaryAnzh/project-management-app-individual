@@ -17,6 +17,9 @@ export class BoardsComponent implements OnInit {
 
   public newBordFormOpen$: Observable<boolean>;
 
+  @Input() public createBoardModalButtonName: string = 'BOARDS.BUTTONS.CREATE';
+  @Input() public modalAction: string = 'create';
+
   constructor(
     private boardsService: BoardsService,
     public translate: TranslateService
@@ -41,4 +44,7 @@ export class BoardsComponent implements OnInit {
     this.boardsService.showConfirmationModalBoardItem(id);
   }
 
+  @Input() closeCreateBoardModal() {
+    this.boardsService.closeNewBoardModalOpen();
+}
 }

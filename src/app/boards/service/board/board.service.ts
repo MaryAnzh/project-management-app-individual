@@ -16,6 +16,9 @@ export class BoardService {
 
   public currentBoard: IBoardData | null = null;
 
+  private _isUpdateBoardModalOpen$$ = new Subject<boolean>();
+  public isUpdateBoardModalOpen$ = this._isUpdateBoardModalOpen$$.asObservable();
+
   constructor(
     private _requestService: RequestService,
     private _confirmModalService: ConfirmModalService,
@@ -52,5 +55,13 @@ export class BoardService {
       });
 
     }
+  }
+
+  showUpdateBoardModal() {
+    this._isUpdateBoardModalOpen$$.next(true);
+  }
+
+  closeUpdateBoardModal() {
+    this._isUpdateBoardModalOpen$$.next(false);
   }
 }

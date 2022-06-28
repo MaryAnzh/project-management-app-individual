@@ -21,3 +21,9 @@ $contrastColorLight2: #f7dfe7;
 %mainGradient {
   background: linear-gradient(to right, $gradientLight, $gradientDark);
 }
+
+%textOwerflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

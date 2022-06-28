@@ -67,9 +67,11 @@
               outline: none;
               border-radius: 4px;
               z-index: 1;
+              @extend %textOwerflow;
 
               @media (max-width: 400px) {
                 width: 95%;
+
               }
 
               &:focus {
@@ -171,9 +173,7 @@
       font-size: 18px;
 
       p {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        @extend %textOwerflow;
       }
 
     }
